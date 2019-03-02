@@ -1,0 +1,25 @@
+.social {
+  align-items: center;
+  display: inline-flex;
+  vertical-align: middle;
+
+  > svg {
+    margin-right: 5px;
+  }
+
+  &--twitch {
+    color: var(--twitch-color);
+  }
+
+  &--twitter {
+    color: var(--twitter-color);
+  }
+
+  &--obs {
+    color: var(--obs-color);
+  }
+
+  &--discord {
+    color: var(--discord-color);
+  }
+}

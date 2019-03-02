@@ -1,0 +1,64 @@
+.intro {
+  align-items: center;
+  background: var(--darker-violet);
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.intro__grid {
+  display: grid;
+  grid-template-areas: "text picture" "integrations picture" "download picture" "note picture";
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(4, min-content);
+}
+
+.intro__integrations {
+  align-items: center;
+  color: var(--light-violet);
+  display: flex;
+  font-size: 19px;
+  grid-area: integrations;
+  margin-top: 64px;
+
+  > * + * {
+    margin-left: 10px;
+  }
+
+  b {
+    align-items: center;
+    display: inline-flex;
+    color: var(--primary-white);
+
+    svg {
+      margin-right: 5px;
+      height: auto;
+      width: auto;
+    }
+
+    + b {
+      margin-left: 5px;
+    }
+  }
+}
+
+.intro__integrations__more {
+  color: var(--dark-violet);
+}
+
+.intro__text {
+  font-size: 42px;
+  grid-area: text;
+  line-height: 1.5;
+}
+
+.intro__download {
+  grid-area: download;
+  margin-top: 30px;
+}
+
+.intro__note {
+  color: var(--grey-violet);
+  grid-area: note;
+  margin-top: 20px;
+}

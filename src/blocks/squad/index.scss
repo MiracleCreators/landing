@@ -1,0 +1,57 @@
+.squad {
+  background: var(--background-color);
+  padding: 100px 0;
+}
+
+.squad__flex {
+  align-items: center;
+  display: flex;
+}
+
+.squad__inner__text {
+  font-size: 22px;
+  flex: 7;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.squad__inner__separator {
+  border-top: 1px solid #303037;
+  margin: 30px 0;
+}
+
+.squad__inner__subtitle {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.squad__inner__contact {
+  font-size: 19px;
+  margin-top: 15px;
+}
+
+.squad__inner__controls {
+  margin-top: 30px;
+}
+
+.squad__ninja {
+  flex: 3;
+
+  > svg {
+    animation: squadNinjaFloat 5s ease-in-out infinite;
+    height: auto;
+    width: auto;
+  }
+}
+
+@keyframes squadNinjaFloat {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}

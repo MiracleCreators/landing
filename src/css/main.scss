@@ -1,0 +1,65 @@
+@import "./reset";
+
+html {
+  --text-color: #ffffff;
+  --link-color: #ffffff;
+  --background-color: #18131c;
+
+  --primary-white: #ffffff;
+  --light-grey: #efefef;
+  --lighter-grey: #c4c5c5;
+  --grey: #a9a7aa;
+
+  --primary-blue: #3c7eff;
+
+  --primary-red: #ff563f;
+
+  --grey-violet: #5a4f60;
+  --dark-grey-violet: #2b2430;
+
+  --primary-violet: #9c64ff;
+  --light-violet: #e3b7ff;
+  --darker-violet: #291b32;
+  --darke-violet: #201c24;
+  --dark-violet: #271f2d;
+  --darkest-violet: #18131c;
+
+  --primary-orange: #ff9900;
+  --primary-green: #1fc66c;
+
+  --obs-color: #ffffff;
+  --twitch-color: #9c64ff;
+  --discord-color: #7289da;
+  --twitter-color: #1da1f2;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+
+  &link--underline {
+    text-decoration: underline;
+  }
+}
+
+.relative {
+  position: relative;
+  z-index: 2;
+}
+
+@import "./common/colors";
+@import "./common/block";
+@import "./common/fullPage";
+@import "./common/container";
+@import "./common/button";
+@import "./common/social";
+@import "./common/well";
+
+@import "./sections";

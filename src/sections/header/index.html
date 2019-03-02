@@ -1,0 +1,35 @@
+<header>
+  <div class="header__logo">
+    <include src="./img/logo.svg"></include>
+  </div>
+  <nav class="header__nav">
+    <a href="/examples">Examples</a>
+    <a href="/learn">Learn</a>
+    <a href="/about">About</a>
+  </nav>
+  <div class="header__socials">
+    <a href="https://twitter.com/FrameNinja_HQ" target="_blank">
+      <include src="img/icons/twitter.svg"></include>
+    </a>
+    <a href="#" target="_blank">
+      <include src="img/icons/discord.svg"></include>
+    </a>
+  </div>
+
+  <a href="/download" class="header__button button button--blue">
+    <include src="img/icons/play.svg"></include>
+    <span>Try <b>FrameNinja</b> for <b>Free</b></span>
+  </a>
+</header>
+
+<script>
+(() => {
+  const links = Array.prototype.slice.call(document.querySelectorAll('.header__nav a'))
+  
+  for (const id in links) {
+    if (location.href.startsWith(links[id].href)) {
+      links[id].classList.add('active')
+    }
+  }
+})()
+</script>

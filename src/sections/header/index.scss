@@ -1,0 +1,49 @@
+header {
+  align-items: center;
+  display: flex;
+  left: 0;
+  padding: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.header__logo {
+  svg {
+    height: auto;
+    width: auto;
+  }
+}
+
+.header__nav {
+  display: flex;
+  margin-left: 100px;
+
+  a.active {
+    color: var(--primary-orange);
+  }
+
+  a + a {
+    margin-left: 50px;
+  }
+}
+
+.header__socials {
+  align-items: center;
+  display: flex;
+  margin-left: auto;
+
+  a + a {
+    margin-left: 20px;
+  }
+
+  svg {
+    height: auto;
+    width: auto;
+  }
+}
+
+.header__button {
+  margin-left: 20px;
+}

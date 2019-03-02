@@ -1,0 +1,22 @@
+.well {
+  background: var(--dark-grey-violet);
+  border-radius: 5px;
+  padding: 25px 30px;
+}
+
+.well__title {
+  color: var(--primary-white);
+  font-weight: 500;
+}
+
+.well__text {
+  color: var(--grey-violet);
+  margin-top: 10px;
+  line-height: 1.5;
+
+  a {
+    color: var(--grey-violet);
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}

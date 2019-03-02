@@ -1,0 +1,40 @@
+.socials {
+  background: var(--darkest-violet);
+  text-align: center;
+}
+
+.socials__text {
+  line-height: 2;
+  text-align: center;
+  padding: 120px 0;
+}
+
+.socials__picture {
+  svg {
+    max-width: calc(100% - 100px);
+    height: auto;
+    width: auto;
+  }
+}
+
+.socials__arrow {
+  height: 100px;
+
+  svg {
+    height: auto;
+    width: auto;
+  }
+}
+
+.socials__separator {
+  background: linear-gradient(
+    to bottom left,
+    var(--darkest-violet),
+    var(--darkest-violet) 50%,
+    var(--background-color) 50%,
+    var(--background-color)
+  );
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}

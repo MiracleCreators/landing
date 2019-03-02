@@ -1,0 +1,53 @@
+.learn {
+  background: var(--background-color);
+}
+
+.learn__block {
+  display: flex;
+  margin-top: 100px;
+}
+
+.learn__menu {
+  background: var(--darke-violet);
+  flex: 35;
+  display: flex;
+  justify-content: flex-end;
+  padding: 50px 0;
+}
+
+.learn__nav {
+  margin-right: 150px;
+
+  > a {
+    display: block;
+    border-left: 7px solid transparent;
+    color: var(--grey);
+    font-size: 20px;
+    padding-left: 20px;
+    transition: color 0.2s ease-out, border-color 0.2s ease-out;
+
+    + a {
+      margin-top: 45px;
+    }
+
+    &.active {
+      border-color: var(--primary-orange);
+      color: var(--primary-orange);
+    }
+  }
+}
+
+.learn__video {
+  background: var(--grey-violet);
+  flex: 65;
+  padding-top: 37.15%;
+  position: relative;
+}
+
+.learn__video__inner {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  position: absolute;
+}

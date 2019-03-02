@@ -1,0 +1,90 @@
+.footer {
+  align-items: center;
+  background: #ffffff;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.16) inset;
+  display: flex;
+  height: 360px;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+.footer__parallax {
+  bottom: 0;
+  display: grid;
+  grid-template-areas: "logo . socials" "firstNav secondNav mail";
+  grid-template-columns: 1fr 1fr 2fr;
+  height: 360px;
+  max-width: 730px;
+  position: fixed;
+  width: 100%;
+}
+
+.footer__logo {
+  align-self: center;
+  grid-area: "logo";
+
+  > svg {
+    height: 46px;
+    width: 42px;
+    color: #858586;
+  }
+}
+
+.footer__socials {
+  align-self: center;
+  grid-area: socials;
+  margin-left: auto;
+
+  a + a {
+    margin-left: 10px;
+  }
+
+  svg {
+    color: #858586;
+    height: auto;
+    width: 30px;
+  }
+}
+
+.footer__nav {
+  &--first {
+    grid-area: firstNav;
+  }
+
+  &--second {
+    grid-area: secondNav;
+  }
+}
+
+.footer__link {
+  color: #858586;
+  display: block;
+  font-size: 18px;
+  line-height: 1.5;
+
+  &--big {
+    color: #18181d;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+}
+
+.footer__mail {
+  grid-area: mail;
+  text-align: right;
+}
+
+.footer__mail__title {
+  color: #18181d;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.footer__mail__mail {
+  color: #858586;
+  font-size: 18px;
+  line-height: 1.5;
+}

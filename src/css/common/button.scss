@@ -1,0 +1,54 @@
+.button {
+  align-items: center;
+  background: var(--btn-color);
+  border: 2px solid var(--btn-color);
+  border-radius: 5px;
+  display: inline-flex;
+  font-size: 14px;
+  padding: 16px 32px;
+
+  svg {
+    margin: 0 10px 0 0;
+
+    &:last-child {
+      margin: 0 0 0 10px;
+    }
+  }
+
+  &--medium {
+    font-size: 16px;
+    padding: 16px 50px;
+  }
+
+  &--big {
+    font-size: 18px;
+    padding: 25px 50px;
+  }
+
+  &--bordered {
+    background: none;
+    border-radius: 10px;
+  }
+
+  &--blue {
+    --btn-color: var(--primary-blue);
+  }
+
+  &--orange {
+    --btn-color: var(--primary-orange);
+  }
+
+  &--twitter {
+    --btn-color: var(--twitter-color);
+  }
+
+  &--discord {
+    --btn-color: var(--discord-color);
+  }
+}
+
+.buttons {
+  * + * {
+    margin-left: 20px;
+  }
+}

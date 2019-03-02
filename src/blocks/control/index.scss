@@ -1,0 +1,57 @@
+.control {
+  background: var(--background-color);
+}
+
+.control__title {
+  font-size: 61px;
+}
+
+.control__text {
+  font-size: 30px;
+  line-height: 1.5;
+  margin-top: 60px;
+}
+
+.control__arrow {
+  vertical-align: text-top;
+
+  svg {
+    display: inline;
+    height: auto;
+    vertical-align: -140%;
+    width: auto;
+  }
+}
+
+.control__demo {
+  align-items: center;
+  display: flex;
+  margin-top: 40px;
+}
+
+.control__obs {
+  flex: 0 auto;
+
+  > img {
+    max-width: 100%;
+  }
+}
+
+.control__vector {
+  flex: 1;
+  margin: 0 -20px;
+  position: relative;
+
+  > svg {
+    height: auto;
+    width: auto;
+  }
+}
+
+.control__ninja {
+  flex: auto;
+
+  > img {
+    max-width: 100%;
+  }
+}

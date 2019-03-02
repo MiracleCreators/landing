@@ -1,0 +1,97 @@
+.download {
+  align-items: center;
+  background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 175px 0 300px;
+}
+
+.download__title {
+  font-size: 47px;
+  font-weight: 600;
+}
+
+.download__first {
+  margin-top: 125px;
+}
+
+.download__step {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &--left {
+    align-items: flex-start;
+  }
+
+  .well {
+    margin-top: 30px;
+    width: 245px;
+  }
+}
+
+.download__step__title {
+  color: var(--grey-violet);
+  font-size: 24px;
+
+  b {
+    color: var(--primary-white);
+  }
+}
+
+.download__step__controls {
+  margin-top: 30px;
+}
+
+.download__step__requirements {
+  color: var(--grey-violet);
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+.download__step__list {
+  font-size: 18px;
+  line-height: 1.5;
+  list-style: decimal inside;
+  margin-top: 25px;
+}
+
+.download__separator {
+  align-items: center;
+  display: flex;
+  margin: 30px 0;
+  width: 670px;
+}
+
+.download__separator__arrow {
+  svg {
+    height: auto;
+    width: auto;
+  }
+}
+
+.download__separator__line {
+  border-bottom: 1px dashed #453850;
+  border-top: 1px dashed #453850;
+  flex: auto;
+  margin-right: 120px;
+}
+
+.download__second {
+  display: flex;
+}
+
+.download__second__arrow {
+  align-self: center;
+  margin: 0 60px;
+
+  svg {
+    height: auto;
+    width: auto;
+  }
+}
+
+.download__step__image {
+  margin: 30px 0 20px;
+}

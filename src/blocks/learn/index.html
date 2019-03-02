@@ -1,0 +1,48 @@
+<div class="learn block relative">
+  <div class="container container--medium">
+    <h2 class="block__title">Learn</h2>
+    <p class="block__text">Learn how to use <b>FrameNinja</b> to get all the infinite possibilities.</p>
+    <p class="block__text">Watch guided video and follow along with an example cases.</p>
+  </div>
+
+  <div class="learn__block">
+    <div class="learn__menu">
+      <nav class="learn__nav">
+        <a href="#" class="active"><b>Setup Workspace</b></a>
+        <a href="#">Getting started with <b>Chains</b></a>
+        <a href="#">Getting started with <b>Scripts</b></a>
+        <a href="#">Getting started with <b>Autoruns</b></a>
+        <a href="#">Getting started with <b>Chat</b></a>
+        <a href="#"><b>Animations Basics</b></a>
+        <a href="#"><b>Variables Basics</b></a>
+      </nav>
+    </div>
+    <div class="learn__video">
+      <div class="learn__video__inner">test</div>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const links = Array.prototype.slice.call(document.querySelectorAll('.learn__nav > a'))
+  const video = document.querySelector('.learn__video__inner')
+  const videos = []
+  
+  links.forEach((link, idx) => {
+    link.onclick = evt => {
+      video.innerHTML = `Clicked ${idx}`
+      links.forEach(link => {
+        link.classList.remove('active')
+      })
+      link.classList.add('active')
+    }
+
+    link.onmousedown = (evt) => {
+      evt.stopPropagation();
+      evt.stopImmediatePropagation();
+      evt.preventDefault()
+    }
+  })
+})()
+</script>
