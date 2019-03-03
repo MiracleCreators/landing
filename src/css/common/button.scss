@@ -1,11 +1,23 @@
 .button {
+  --btn-color: var(--primary-white);
+  --btn-bgcolor: var(--primary-blue);
   align-items: center;
-  background: var(--btn-color);
-  border: 2px solid var(--btn-color);
+  background: var(--btn-bgcolor);
+  border: 2px solid var(--btn-bgcolor);
   border-radius: 5px;
+  color: var(--btn-color);
   display: inline-flex;
   font-size: 14px;
   padding: 16px 32px;
+  transition: opacity 0.25s ease-out;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 
   svg {
     margin: 0 10px 0 0;
@@ -31,19 +43,35 @@
   }
 
   &--blue {
-    --btn-color: var(--primary-blue);
+    --btn-bgcolor: var(--primary-blue);
+  }
+
+  &--green {
+    --btn-color: var(--btn-green);
+    --btn-bgcolor: var(--primary-green);
   }
 
   &--orange {
-    --btn-color: var(--primary-orange);
+    --btn-color: var(--btn-orange);
+    --btn-bgcolor: var(--primary-orange);
+  }
+
+  &--violet {
+    --btn-color: var(--btn-violet);
+    --btn-bgcolor: var(--primary-violet);
+  }
+
+  &--orange {
+    --btn-color: var(--btn-orange);
+    --btn-bgcolor: var(--primary-orange);
   }
 
   &--twitter {
-    --btn-color: var(--twitter-color);
+    --btn-bgcolor: var(--twitter-color);
   }
 
   &--discord {
-    --btn-color: var(--discord-color);
+    --btn-bgcolor: var(--discord-color);
   }
 }
 
