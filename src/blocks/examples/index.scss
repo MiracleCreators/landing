@@ -83,3 +83,38 @@
     margin-right: 10px;
   }
 }
+
+@media (max-width: 768px) {
+  .examples__title {
+    font-size: 36px;
+    padding: 50px 0;
+  }
+
+  .example {
+    padding: 40px 0;
+  }
+
+  .example__grid {
+    grid-template-areas: "title" "integrations" "video" "text" "controls";
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+
+  .example__title {
+    font-size: 22px;
+  }
+
+  .example__text {
+    font-size: 16px;
+  }
+
+  .example__controls {
+    .button {
+      width: 100%;
+    }
+  }
+
+  .examples__more {
+    padding: 50px 0 0;
+  }
+}

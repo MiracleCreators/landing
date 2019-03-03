@@ -1,5 +1,5 @@
 .control {
-  background: var(--background-color);
+  background: #1e1823;
 }
 
 .control__title {
@@ -53,5 +53,15 @@
 
   > img {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .control__title {
+    font-size: 36px;
+  }
+
+  .control__text {
+    font-size: 20px;
   }
 }

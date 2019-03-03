@@ -21,8 +21,8 @@
   grid-area: integrations;
   margin-top: 64px;
 
-  > * + * {
-    margin-left: 10px;
+  > * {
+    margin-right: 10px;
   }
 
   b {
@@ -43,7 +43,7 @@
 }
 
 .intro__integrations__more {
-  color: var(--dark-violet);
+  color: var(--light-violet);
 }
 
 .intro__text {
@@ -61,4 +61,36 @@
   color: var(--grey-violet);
   grid-area: note;
   margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .intro__grid {
+    display: grid;
+    grid-template-areas: "text" "integrations" "download" "note" "picture";
+    grid-template-columns: auto;
+    grid-auto-rows: min-content;
+  }
+
+  .intro__text {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .intro__integrations {
+    flex-wrap: wrap;
+    font-size: 16px;
+    justify-content: center;
+    line-height: 2;
+  }
+
+  .intro__download {
+    a {
+      padding: 20px 40px;
+      width: 100%;
+    }
+  }
+
+  .intro__note {
+    text-align: center;
+  }
 }

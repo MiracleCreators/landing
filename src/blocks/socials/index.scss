@@ -29,10 +29,10 @@
 .socials__separator {
   background: linear-gradient(
     to bottom left,
-    var(--darkest-violet),
-    var(--darkest-violet) 50%,
+    var(--background-color),
     var(--background-color) 50%,
-    var(--background-color)
+    #1e1823 50%,
+    #1e1823
   );
   height: 200px;
   overflow: hidden;
