@@ -77,3 +77,21 @@
 .unlockGallery__hero__download {
   margin-top: 40px;
 }
+
+@media (max-width: 576px) {
+  .unlockGallery__grid {
+    height: 400px;
+  }
+
+  .unlockGallery__hero__title {
+    font-size: 24px;
+  }
+
+  .unlockGallery__hero__text {
+    font-size: 18px;
+  }
+
+  .unlockGallery__hero__download {
+    transform: scale(0.8);
+  }
+}

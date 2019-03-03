@@ -95,3 +95,29 @@
 .download__step__image {
   margin: 30px 0 20px;
 }
+
+@media (max-width: 576px) {
+  .download__first {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .download__second {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .download__second__arrow {
+    transform: rotate(90deg);
+    margin: 60px 0;
+  }
+
+  .download__step {
+    width: calc(100% - 60px);
+
+    img {
+      width: 100%;
+    }
+  }
+}

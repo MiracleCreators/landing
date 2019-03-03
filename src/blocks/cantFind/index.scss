@@ -10,9 +10,26 @@
 }
 
 .cantFind__text {
+  line-height: 1.5;
   margin-top: 20px;
 }
 
 .cantFind__buttons {
   margin-top: 30px;
+}
+
+@media (max-width: 576px) {
+  .cantFind__title {
+    font-size: 18px;
+  }
+
+  .cantFind__text {
+    font-size: 16px;
+  }
+
+  .cantFind__buttons {
+    > a {
+      padding: 15px 25px;
+    }
+  }
 }

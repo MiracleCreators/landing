@@ -25,3 +25,13 @@
 .gallery__item__title {
   margin-top: 20px;
 }
+
+@media (max-width: 576px) {
+  .gallery__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .gallery__item__picture {
+    padding-top: 50%;
+  }
+}
