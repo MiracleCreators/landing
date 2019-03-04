@@ -66,6 +66,8 @@
 
 .scroll__down {
   --color: #EBEBEB;
+  position: relative;
+  top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,7 +94,28 @@
   transition: 0.3s ease;
 }
 
+@media (max-width: 1440px) {
+
+  .intro {
+    padding-top: 60px;
+  }
+
+  .intro__text {
+    font-size: 30px;
+  }
+
+  .scroll__down {
+    display: none;
+  }
+
+}
+
 @media (max-width: 768px) {
+
+  .intro {
+    padding-top: 100px; 
+  }
+
   .intro__grid {
     display: grid;
     grid-template-areas: "text" "integrations" "download" "note" "picture";
@@ -101,21 +124,23 @@
   }
 
   .intro__text {
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
   }
 
   .intro__integrations {
+    margin-top: 32px;
     flex-wrap: wrap;
-    font-size: 16px;
     justify-content: center;
+    font-size: 16px;
     line-height: 2;
   }
 
   .intro__download {
     a {
-      padding: 20px 40px;
       width: 100%;
+      padding: 16px 24px;
+      font-size: 14px;
     }
   }
 
