@@ -18,7 +18,7 @@ header {
 
 .header__nav {
   display: flex;
-  margin-left: 100px;
+  margin-left: auto;
 
   a.active {
     color: var(--primary-orange);
@@ -32,7 +32,7 @@ header {
 .header__socials {
   align-items: center;
   display: flex;
-  margin-left: auto;
+  margin-left: 70px;
 
   a + a {
     margin-left: 20px;
