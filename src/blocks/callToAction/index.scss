@@ -1,0 +1,43 @@
+.callToAction {
+  background-color: #221B28;
+  padding: 110px 0 140px;
+}
+
+.callToAction__ninjia {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 600px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.callToAction__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.callToAction__title {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .cantFind__title {
+    font-size: 18px;
+  }
+
+  .cantFind__text {
+    font-size: 16px;
+  }
+
+  .cantFind__buttons {
+    > a {
+      padding: 15px 25px;
+    }
+  }
+}
