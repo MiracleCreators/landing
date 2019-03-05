@@ -48,6 +48,19 @@ header {
   margin-left: 20px;
 }
 
+.float__button {
+  position: fixed;
+  right: 40px;
+  top: 40px;
+  transition: transform 150ms;
+  transform: translateY(-100px);
+  z-index: 999;
+}
+
+.float__button.active {
+  transform: translateY(-10px);
+}
+
 @media only screen and (max-width: 1440px) {
   header {
     padding: 20px 30px;
