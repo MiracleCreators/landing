@@ -151,6 +151,32 @@
   }
 }
 
+@media (max-width: 1440px) {
+  .howItWorks.chains,
+  .howItWorks.scripts {
+    background-size: auto;
+    background-position: 100% 25%;
+  }
+  .howItWorks__controls-images img:nth-of-type(4) ~ img {
+    display: none;
+  }
+  .howItWorks__item__grid {
+    grid-template-columns: auto;
+    grid-gap: 30px 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .howItWorks.chains,
+  .howItWorks.scripts {
+    background-size: 60%;
+  }
+  .howItWorks__item__picture img {
+    width: 100%;
+    height: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .howItWorks {
     padding: 50px 0;
