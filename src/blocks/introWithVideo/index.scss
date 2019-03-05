@@ -68,6 +68,23 @@
 
 .intro__video {
   grid-area: video;
+  border: 5px solid var(--primary-violet);
+  border-radius: 5px;
+  min-height: 300px;
+  width: 630px;
+}
+
+.intro__video .video__wrapper {
+  position: relative;
+}
+
+.intro__video .video__wrapper .button__play {
+  height: 40px;
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50%);
+  background-color: var(--primary-violet);
+  border-color: var(--primary-violet);
 }
 
 .intro__note {
@@ -130,18 +147,22 @@
 @media (max-width: 768px) {
 
   .intro {
-    padding-top: 100px; 
+    padding-top: 100px;
+    justify-content: initial;
   }
 
   .intro__grid {
     display: grid;
-    grid-template-areas: "text" "integrations" "download" "note" "picture";
+    grid-template-areas: "text" "integrations" "download" "note";
+    // grid-template-areas: "text" "integrations" "download" "note" "picture";
     grid-template-columns: auto;
     grid-auto-rows: min-content;
+    margin-top: 160px;
+    margin-bottom: auto;
   }
 
   .intro__text {
-    font-size: 18px;
+    font-size: 36px;
     text-align: center;
   }
 
@@ -155,7 +176,9 @@
 
   .intro__download {
     a {
-      width: 100%;
+      // width: 100%;
+      margin-left: auto;
+      margin-right: auto;
       padding: 16px 24px;
       font-size: 14px;
     }
