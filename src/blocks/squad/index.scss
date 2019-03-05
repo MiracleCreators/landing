@@ -55,3 +55,20 @@
     transform: translatey(0px);
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .squad {
+    padding: 64px 0;
+  }
+  .squad__inner__text {
+    font-size: 18px;
+  }
+  .squad__inner__text,
+  .squad__inner__subtitle,
+  .squad__inner__contact {
+    line-height: 1.5;
+  }
+  .squad__ninja {
+    display: none;
+  }
+}
