@@ -52,17 +52,104 @@
   grid-area: controls;
 }
 
+/* Here's the styles for video modal window. Maybe we should create component. */
 .example__video {
   border-radius: 5px;
   grid-area: video;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--dark-violet);
-  padding-top: 56.25%;
+  // padding-top: 56.25%;
   position: relative;
 
   .example--light & {
     background: var(--darkest-violet);
   }
 }
+
+.play__button {
+  --size: 60px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  svg {
+    height: calc(var(--size) / 2);
+    width: calc(var(--size) / 2);
+    pointer-events: none;
+  }
+
+}
+
+.play__button--green {
+  background-color: var(--primary-green)
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+.modal.opened {
+  display: flex;
+}
+
+.modal__backdrop {
+  background-color: rgba(0, 0, 0, 0.5)
+}
+
+.modal__controls {
+  display: flex;
+}
+
+.modal__controls--close {
+  --size: 24px;
+  width: var(--size);
+  height: var(--size);
+  margin-left: auto;
+
+  svg {
+    width: var(--size);
+    height: var(--size);
+    pointer-events: none;
+  }
+
+  svg path {
+    fill: #fff;
+  }
+}
+
+.modal__container {
+  width: 50%;
+  height: 55%;
+  margin: auto;
+}
+
+.modal__content-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.modal__content-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* End of video modal */
 
 .examples__more {
   align-items: center;
