@@ -12,18 +12,64 @@
   padding: 100px 0;
 }
 
+.howItWorks.parent {
+  padding-top: 0;
+  h2 {
+    padding: 20px 0px 100px 0;
+  }
+}
+
+.howItWorks.chains,
+.howItWorks.scripts {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+
+.howItWorks.chains {
+  background-image: url(../../img/howItWorks/obs_bg.jpg);
+}
+
+.howItWorks.scripts {
+  padding-top: 180px;
+  &:after {
+    content: "";
+    display: block;
+    width: 45%;
+    height: 665px;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    background-image: url(../../img/howItWorks/obs_bg.jpg);
+  }
+}
+
+.howItWorks.autoruns {
+  padding-top: 180px;
+  &:after {
+    content: "";
+    display: block;
+    width: 45%;
+    height: 665px;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    background-image: url(../../img/howItWorks/obgs_bg_flipped.jpg);
+  }
+}
+
 .howItWorks__item--light {
   background: var(--dark-violet);
 }
 
 .howItWorks__item__grid {
   display: grid;
-  grid-template-areas: "title video" "text video" "features video" "controls video";
-  grid-template-columns: 1fr minmax(50%, max-content);
-  grid-gap: 30px 150px;
+  grid-template-areas: "title picture" "text picture" "features picture" "controls picture";
+  grid-template-columns: 1fr minmax(60%, max-content);
+  grid-gap: 30px 100px;
 
   .howItWorks__item--right & {
-    grid-template-areas: "video title" "video text" "video features" "video controls";
+    grid-template-areas: "picture title" "picture text" "picture features" "picture controls";
     grid-template-columns: minmax(50%, max-content) 1fr;
   }
 }
@@ -52,17 +98,38 @@
   margin-top: 20px;
 }
 
-.howItWorks__item__video {
-  border-radius: 5px;
-  grid-area: video;
-  background: var(--dark-violet);
-  padding-top: 56.25%;
+.howItWorks__item__picture {
+  grid-area: picture;
   position: relative;
-
-  .howItWorks__item--light & {
-    background: var(--darkest-violet);
+  img {
+    border-radius: 8px;
   }
 }
+
+.howItWorks__controls-images {
+  position: relative;
+  top: 125px;
+  display: flex;
+  margin: 0 30px;
+  justify-content: space-between;
+  z-index: 3;
+  img {
+    border-radius: 8px;
+    max-width: 100%;
+  }
+}
+
+// .howItWorks__item__video {
+//   border-radius: 5px;
+//   grid-area: video;
+//   background: var(--dark-violet);
+//   padding-top: 56.25%;
+//   position: relative;
+
+//   .howItWorks__item--light & {
+//     background: var(--darkest-violet);
+//   }
+// }
 
 .howItWorks__item__features {
   grid-area: features;
