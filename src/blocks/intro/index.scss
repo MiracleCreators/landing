@@ -56,6 +56,14 @@
 .intro__download {
   grid-area: download;
   margin-top: 30px;
+  display: flex;
+  > a:not(:last-of-type) {
+    margin-right: 12px;
+  }
+}
+
+.intro__picture {
+  grid-area: picture;
 }
 
 .intro__note {
