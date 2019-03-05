@@ -37,6 +37,7 @@
 
 <script>
 (() => {
+  
   const links = Array.prototype.slice.call(document.querySelectorAll('.header__nav a'))
   
   for (const id in links) {
@@ -48,12 +49,9 @@
   // floating header button
   const floatingButton = document.querySelector('.float__button');
 
-  console.log(floatingButton)
-
   window.onscroll = () => document.documentElement.scrollTop > 900
     ? floatingButton.classList.add('active')
     : floatingButton.classList.remove('active');
-
 
 })()
 </script>
