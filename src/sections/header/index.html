@@ -91,6 +91,19 @@
     }
   }
 
+  // modals
+  const modalButtons = document.querySelectorAll('[data-modal]');
+
+  modalButtons.forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const buttonTarget = event.target.getAttribute('data-modal');
+      document.getElementById(buttonTarget).classList.toggle('opened');
+    })
+  })
+
   // floating header button
   const floatingButton = document.querySelector('.float__button');
 

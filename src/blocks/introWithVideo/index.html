@@ -2,13 +2,11 @@
   <div class="intro__grid container container--medium">
     <h2 class="intro__text">
       Numerous<br />
-      <b class="color--orange">interactive features</b><br />
-      for <span class="color--red">•</span> livestreaming
+      <b class="color--orange">interactive features</b><br /> for <span class="color--red">•</span> livestreaming
     </h2>
 
     <div class="intro__note">
-      <b>Stand Out.</b> Be <b>unique</b>, <b>conspicuous</b> and <b>wonderful</b><br>
-      in a matter of seconds.
+      <b>Stand Out.</b> Be <b>unique</b>, <b>conspicuous</b> and <b>wonderful</b><br> in a matter of seconds.
     </div>
 
     <div class="intro__integrations">
@@ -35,17 +33,29 @@
       </a>
     </div>
 
-    <!-- <div class="intro__video">
-      <div class="video__wrapper">
-        <a href="#" class="button button__play">
-          See&nbsp;<b>how it works</b>
-        </a> -->
-        <!-- <video loop="" muted="" class="video__autoplay video__autoplay--visible">
-          <source src="./assets/madewith1.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;">
-        </video> -->
-      <!-- </div> -->
-      <!-- <img src="./img/header_ninjia_squad.png" alt="ninjia squad"> -->
-    <!-- </div> -->
+    <div class="intro__video">
+      <a href="#" class="button button__play" data-modal="modal__intro">
+        <include src="img/icons/play.svg"></include>
+        See&nbsp;<b>how it works</b>
+      </a>
+      <img src="./img/frame_ninjia_intro_video.png" alt="frame intro video">
+    </div>
+
+    <div id="modal__intro" class="modal modal__backdrop" data-modal="modal__intro">
+      <div class="modal__container">
+        <div class="modal__controls">
+          <a href="#" class="modal__controls--close" data-modal="modal__intro">
+            <include src="img/icons/mobile-menu-close.svg"></include>
+          </a>
+        </div>
+        <div class="modal__content">
+          <div class="modal__content-video">
+            <iframe src="https://www.youtube.com/embed/eEJTPdJevVk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
   <a class="scroll__down">
