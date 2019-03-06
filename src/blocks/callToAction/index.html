@@ -1,4 +1,7 @@
 <div class="callToAction relative">
+  <a href="#" class="callToAction__scrollup">
+    <include src="img/icons/arrow-up.svg"></include>
+  </a>
   <div class="callToAction__ninjia">
     <img src="/img/action_ninjias.png" alt="action ninjias">
   </div>
@@ -17,3 +20,19 @@
     </a>
   </div>
 </div>
+
+<script>
+(() => {
+
+  const scrollToTopButton = document.querySelector('.callToAction__scrollup')
+  const introSection = document.querySelector('section.intro')
+
+  scrollToTopButton.addEventListener('click', evt => {
+    evt.preventDefault()
+    introSection.scrollIntoView({
+      behavior: "smooth"
+    })
+  })
+
+})();
+</script>
