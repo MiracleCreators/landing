@@ -18,7 +18,15 @@
       </nav>
     </div>
     <div class="learn__video">
-      <div class="learn__video__inner">test</div>
+      <div class="learn__video__inner">
+        <iframe
+          class="learn__video__inner__iframe"
+          src="https://www.youtube.com/embed/eEJTPdJevVk"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
     </div>
   </div>
 </div>
@@ -26,12 +34,12 @@
 <script>
 (() => {
   const links = Array.prototype.slice.call(document.querySelectorAll('.learn__nav > a'))
-  const video = document.querySelector('.learn__video__inner')
-  const videos = []
+  const video = document.querySelector('.learn__video__inner__iframe')
+  const videos = ['eEJTPdJevVk', 'MmhKM_DJFFk', 'uNpaEB0KfTU', 'S1ax56m9csQ', 'x14NqUU3GJc', 'Fj42Ul470WU', 'AtOCy9Ynd0E']
   
   links.forEach((link, idx) => {
     link.onclick = evt => {
-      video.innerHTML = `Clicked ${idx}`
+      video.setAttribute('src', `https://www.youtube.com/embed/${videos[idx]}`)
       links.forEach(link => {
         link.classList.remove('active')
       })
