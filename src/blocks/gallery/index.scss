@@ -1,5 +1,6 @@
 .gallery {
   background: var(--background-color);
+  padding-top: 200px;
 }
 
 .gallery__grid {
@@ -130,6 +131,12 @@
 
 .gallery__modal__actions > .button + .button {
   margin-left: 10px;
+}
+
+@media (max-width: 1440px) {
+  .gallery {
+    padding-top: 100px;
+  }
 }
 
 @media (max-width: 768px) {
