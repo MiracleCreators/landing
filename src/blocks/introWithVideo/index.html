@@ -49,19 +49,19 @@
 </section>
 
 <script>
-  (() => {
+(() => {
 
-    const scrollDownButton = document.querySelector('.scroll__down')
+  const scrollDownButton = document.querySelector('.scroll__down')
 
-    scrollDownButton.addEventListener('click', evt => {
-      evt.preventDefault()
+  scrollDownButton.addEventListener('click', evt => {
+    evt.preventDefault()
 
-      const socialSection = document.querySelector('section.socials')
+    const socialSection = document.querySelector('section.socials')
 
-      socialSection.scrollIntoView({
-        behavior: "smooth"
-      })
+    socialSection.scrollIntoView({
+      behavior: "smooth"
     })
+  })
 
-  })();
+})();
 </script>
