@@ -7,6 +7,9 @@
 
   <div class="learn__block">
     <div class="learn__menu">
+      <a id="learn__video__mobile-link" href="#">
+        Setup Workspace
+      </a>
       <nav class="learn__nav">
         <a href="#" class="active"><b>Setup Workspace</b></a>
         <a href="#">Getting started with <b>Chains</b></a>
@@ -36,21 +39,37 @@
   const links = Array.prototype.slice.call(document.querySelectorAll('.learn__nav > a'))
   const video = document.querySelector('.learn__video__inner__iframe')
   const videos = ['eEJTPdJevVk', 'MmhKM_DJFFk', 'uNpaEB0KfTU', 'S1ax56m9csQ', 'x14NqUU3GJc', 'Fj42Ul470WU', 'AtOCy9Ynd0E']
+  const mobileLinkSelector = document.getElementById('learn__video__mobile-link')
+  
+  const mobileMenu = document.querySelector('.learn__nav')
   
   links.forEach((link, idx) => {
     link.onclick = evt => {
+      evt.preventDefault()
       video.setAttribute('src', `https://www.youtube.com/embed/${videos[idx]}`)
       links.forEach(link => {
         link.classList.remove('active')
       })
       link.classList.add('active')
+      if(window.innerWidth <= 768){
+        mobileMenu.classList.toggle('active')
+        mobileLinkSelector.innerText = evt.target.innerText
+      }
     }
 
     link.onmousedown = (evt) => {
-      evt.stopPropagation();
-      evt.stopImmediatePropagation();
+      evt.stopPropagation()
+      evt.stopImmediatePropagation()
       evt.preventDefault()
     }
   })
+
+  mobileLinkSelector.addEventListener('click', evt => {
+    evt.preventDefault()
+
+    mobileMenu.classList.toggle('active')
+
+  })
+
 })()
 </script>
