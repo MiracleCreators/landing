@@ -18,21 +18,105 @@ header {
 
 .header__nav {
   display: flex;
-  margin-left: 100px;
+  margin-left: auto;
 
   a.active {
     color: var(--primary-orange);
   }
+}
 
-  a + a {
-    margin-left: 50px;
+.header__nav > ul {
+  display: flex;
+  margin-left: auto;
+}
+
+.header__nav > ul > li + li {
+  margin-left: 50px;
+}
+
+.header__nav .dropdown {
+  margin-top: 20px;
+  transform: translateY(-20px);
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+  top: 30px;
+  left: -220px;
+  z-index: 999;
+  padding: 15px 0;
+  width: 345px;
+  background-color: #2C2C31;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.49);
+  border-radius: 5px;
+  transition: all 0.3s;
+  z-index: 5;
+  &::after {
+    content: url(../img/headerDropdown/dropdown-triangle.svg);
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: -13px;
+    right: 92px;
+    z-index: 999;
+    color: white;
   }
 }
+
+.header-nav__item--dropdown:active .dropdown,
+.header-nav__item--dropdown:hover .dropdown {
+  display: block;
+  transition: all 0.3s ease;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.header__nav .dropdown .dropdown__link {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 24px;
+  font-size: 14px;
+  line-height: 1.25;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #2C2C31;
+  transition: all 0.3s;
+  &:hover {
+    background-color: #34343A;
+  }
+}
+
+.header__nav .dropdown .dropdown__icon {
+  width: 36px;
+  margin-right: 16px;
+  text-align: center;
+  color: red;
+  svg {
+    font-size: 30px;
+    path {
+      fill: #9292A1;
+    }
+  }
+}
+
+.header__nav .dropdown .dropdown__text {
+  color: #ffffff;
+}
+
+.header__nav .dropdown .dropdown__text--transparent {
+  opacity: 0.7;
+}
+
+.header-nav__item--dropdown {
+  position: relative;
+  padding: 4px 6px;
+  margin-top: -4px;
+} 
 
 .header__socials {
   align-items: center;
   display: flex;
-  margin-left: auto;
+  margin-left: 70px;
 
   a + a {
     margin-left: 20px;
@@ -46,4 +130,36 @@ header {
 
 .header__button {
   margin-left: 20px;
+}
+
+.float__button {
+  position: fixed;
+  right: 40px;
+  top: 40px;
+  transition: transform 150ms;
+  transform: translateY(-100px);
+  z-index: 999;
+}
+
+.float__button.active {
+  transform: translateY(-10px);
+}
+
+@media only screen and (max-width: 1440px) {
+  header {
+    padding: 20px 30px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header__socials,
+  .header__button,
+  .float__button, 
+  .header__nav {
+    display: none;
+  }
+  header {
+    padding: 16px;
+    justify-content: space-between;
+  }
 }

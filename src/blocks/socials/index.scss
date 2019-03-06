@@ -38,3 +38,15 @@
   overflow: hidden;
   position: relative;
 }
+
+@media only screen and (max-width: 767px) {
+  .socials__text {
+    padding: 60px 0;
+  }
+  .socials__arrow {
+    height: 50px;
+  }
+  .socials__separator {
+    height: 100px;
+  }
+}

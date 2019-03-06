@@ -16,7 +16,28 @@
           <b>Get it</b>
         </a>
       </div>
-      <div class="example__video"></div>
+      <div class="example__video">
+        
+        <a class="play__button play__button--green" data-modal="modal__example">
+          <include src="img/icons/play.svg"></include>
+        </a>
+
+        <div id="modal__example" class="modal modal__backdrop" data-modal="modal__example">
+          <div class="modal__container">
+            <div class="modal__controls">
+              <a href="#" class="modal__controls--close" data-modal="modal__example">
+                <include src="img/icons/mobile-menu-close.svg"></include>
+              </a>
+            </div>
+            <div class="modal__content">
+              <div class="modal__content-video">
+                <iframe src="https://www.youtube.com/embed/eEJTPdJevVk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -35,7 +56,9 @@
           <b>I want it</b>
         </a>
       </div>
-      <div class="example__video"></div>
+      <div class="example__video">
+
+      </div>
     </div>
   </div>
 
@@ -52,7 +75,9 @@
           <b>Get started</b>
         </a>
       </div>
-      <div class="example__video"></div>
+      <div class="example__video">
+
+      </div>
     </div>
   </div>
 
@@ -63,3 +88,21 @@
     </a>
   </div>
 </section>
+
+<script>
+(() => {
+
+  const modalButtons = document.querySelectorAll('[data-modal]');
+
+  modalButtons.forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const buttonTarget = event.target.getAttribute('data-modal');
+      document.getElementById(buttonTarget).classList.toggle('opened');
+    })
+  })
+
+})();
+</script>

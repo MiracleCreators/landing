@@ -62,14 +62,14 @@
     --btn-bgcolor: var(--primary-orange);
   }
 
+  &--red {
+    --btn-color: var(--primary-white);
+    --btn-bgcolor: var(--primary-red);
+  }
+
   &--violet {
     --btn-color: var(--btn-violet);
     --btn-bgcolor: var(--primary-violet);
-  }
-
-  &--orange {
-    --btn-color: var(--btn-orange);
-    --btn-bgcolor: var(--primary-orange);
   }
 
   &--twitter {

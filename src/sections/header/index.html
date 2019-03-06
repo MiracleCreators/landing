@@ -1,11 +1,58 @@
 <header>
   <div class="header__logo">
-    <include src="./img/logo.svg"></include>
+    <a href="/index.html">
+      <img src="./img/frame_ninjia_logo.png" alt="frame ninjia logo"/>
+    </a>
   </div>
-  <nav class="header__nav">
-    <a href="/examples.html">Examples</a>
-    <a href="/learn.html">Learn</a>
-    <a href="/about.html">About</a>
+  <nav class="header__nav relative">
+    <ul>
+      <li><a href="/examples.html">Examples</a></li>
+      <li><a href="/learn.html">Learn</a></li>
+      <li class="header-nav__item--dropdown">
+        <a href="/about.html">About</a>
+        <ul class="dropdown">
+            <li class="dropdown__item">
+              <a href="/about.html#story" class="dropdown__link">
+                <div class="dropdown__icon">
+                  <include src="img/headerDropdown/story.svg"></include>
+                </div>
+                <div class="dropdown__text-wrap">
+                  <div class="dropdown__text"><b>Story</b></div>
+                  <div class="dropdown__text dropdown__text--transparent">
+                    Once upon a time
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <a href="/about.html#team" class="dropdown__link">
+                <div class="dropdown__icon">
+                  <include src="img/headerDropdown/team.svg"></include>
+                </div>
+                <div class="dropdown__text-wrap">
+                  <div class="dropdown__text"><b>Team</b></div>
+                  <div class="dropdown__text dropdown__text--transparent">
+                    Meet our team
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <a href="/about.html#roadmap" class="dropdown__link">
+                <div class="dropdown__icon">
+                  <include src="img/headerDropdown/roadmap.svg"></include>
+                </div>
+                <div class="dropdown__text-wrap">
+                  <div class="dropdown__text"><b>Roadmap</b></div>
+                  <div class="dropdown__text dropdown__text--transparent">
+                    Learn more about our future
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>        
+      </li>
+    </ul>
   </nav>
   <div class="header__socials">
     <a href="https://twitter.com/FrameNinja_HQ" target="_blank">
@@ -20,10 +67,22 @@
     <include src="img/icons/play.svg"></include>
     <span>Try <b>FrameNinja</b> for <b>Free</b></span>
   </a>
+  
+  <a href="#" class="header-mobile__burger-open">
+    <include src="img/icons/burger.svg"></include>
+  </a>
 </header>
+
+<a href="/download.html" class="float__button button button--blue">
+  <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.4105 6.94082L6.75088 4.16251C5.97076 3.69762 5 4.28574 5 5.22161V10.7782C5 11.7153 5.97076 12.3022 6.75088 11.8373L11.4105 9.06024C12.1965 8.5917 12.1965 7.40936 11.4105 6.94082" fill="currentColor"></path>
+  </svg>
+  <span>Try <b>FrameNinja</b> for <b>Free</b></span>
+</a>
 
 <script>
 (() => {
+  
   const links = Array.prototype.slice.call(document.querySelectorAll('.header__nav a'))
   
   for (const id in links) {
@@ -31,5 +90,13 @@
       links[id].classList.add('active')
     }
   }
+
+  // floating header button
+  const floatingButton = document.querySelector('.float__button');
+
+  window.onscroll = () => document.documentElement.scrollTop > 900
+    ? floatingButton.classList.add('active')
+    : floatingButton.classList.remove('active');
+
 })()
 </script>

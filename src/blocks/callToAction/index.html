@@ -1,0 +1,38 @@
+<div class="callToAction relative">
+  <a href="#" class="callToAction__scrollup">
+    <include src="img/icons/arrow-up.svg"></include>
+  </a>
+  <div class="callToAction__ninjia">
+    <img src="/img/action_ninjias.png" alt="action ninjias">
+  </div>
+  <div class="callToAction__inner container container--small">
+    <h4 class="callToAction__title">What are you waiting for?</h4>
+    <a href="/download.html" class="button button--big button--blue">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g>
+          <path d="M21.3697 10.7455C21.0195 10.7455 20.7394 11.0257 20.7394 11.3758V17.1093C20.7394 18.6687 19.4694 19.934 17.9147 19.934H4.08531C2.52589 19.934 1.26061 18.664 1.26061 17.1093V11.2825C1.26061 10.9323 0.980475 10.6522 0.630306 10.6522C0.280136 10.6522 0 10.9323 0 11.2825V17.1093C0 19.3644 1.83489 21.1946 4.08531 21.1946H17.9147C20.1698 21.1946 22 19.3597 22 17.1093V11.3758C22 11.0303 21.7199 10.7455 21.3697 10.7455Z"
+            fill="white"></path>
+          <path d="M10.5575 16.1895C10.6789 16.3109 10.8423 16.3763 11.0011 16.3763C11.1598 16.3763 11.3232 16.3156 11.4446 16.1895L15.4506 12.1836C15.698 11.9361 15.698 11.5393 15.4506 11.2918C15.2031 11.0444 14.8063 11.0444 14.5588 11.2918L11.6314 14.2239V1.43569C11.6314 1.08553 11.3512 0.805389 11.0011 0.805389C10.6509 0.805389 10.3708 1.08553 10.3708 1.43569V14.2239L7.43868 11.2918C7.19123 11.0444 6.79437 11.0444 6.54692 11.2918C6.29946 11.5393 6.29946 11.9361 6.54692 12.1836L10.5575 16.1895Z"
+            fill="white"></path>
+        </g>
+      </svg>
+      <span>Try <b>FrameNinja</b> for <b>Free</b></span>
+    </a>
+  </div>
+</div>
+
+<script>
+(() => {
+
+  const scrollToTopButton = document.querySelector('.callToAction__scrollup')
+  const introSection = document.querySelector('section.intro')
+
+  scrollToTopButton.addEventListener('click', evt => {
+    evt.preventDefault()
+    introSection.scrollIntoView({
+      behavior: "smooth"
+    })
+  })
+
+})();
+</script>
