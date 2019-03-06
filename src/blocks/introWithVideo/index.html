@@ -47,3 +47,21 @@
     Scroll Down
   </a>
 </section>
+
+<script>
+  (() => {
+
+    const scrollDownButton = document.querySelector('.scroll__down')
+
+    scrollDownButton.addEventListener('click', evt => {
+      evt.preventDefault()
+
+      const socialSection = document.querySelector('section.socials')
+
+      socialSection.scrollIntoView({
+        behavior: "smooth"
+      })
+    })
+
+  })();
+</script>
