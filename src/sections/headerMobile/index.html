@@ -1,7 +1,7 @@
 <div class="header-mobile">
   <div class="header-mobile__header">
     <a href="/index.html" class="header-menu__logo">
-      <img src="./img/frame_ninjia_logo.png" alt="frame ninjia logo"/>
+      <img src="./img/frame_ninjia_logo.png" alt="frame ninjia logo" />
     </a>
     <a href="/#" class="header-mobile__burger-close">
       <include src="img/icons/mobile-menu-close.svg"></include>
@@ -16,7 +16,13 @@
         <a class="link" href="/learn.html">Learn</a>
       </li>
       <li class="item">
-        <a class="link" href="/about.html">About</a>
+        <a class="link" href="/about.html#story">Story</a>
+      </li>
+      <li class="item">
+        <a class="link" href="/about.html#team">Team</a>
+      </li>
+      <li class="item">
+        <a class="link" href="/about.html#roadmap">Roadmap</a>
       </li>
     </ul>
   </nav>
@@ -42,18 +48,18 @@
 </div>
 
 <script>
-(() => {
+  (() => {
 
-  const headerMobileMenu = document.querySelector('.header-mobile');
-  const openMobileMenuButton = document.querySelector('.header-mobile__burger-open');
-  const closeMobileMenuButton = document.querySelector('.header-mobile__burger-close');
+    const headerMobileMenu = document.querySelector('.header-mobile');
+    const openMobileMenuButton = document.querySelector('.header-mobile__burger-open');
+    const closeMobileMenuButton = document.querySelector('.header-mobile__burger-close');
 
-  [openMobileMenuButton, closeMobileMenuButton].forEach(button => {
-    button.addEventListener('click', event => {
-      event.preventDefault();
-      headerMobileMenu.classList.toggle('opened');
+    [openMobileMenuButton, closeMobileMenuButton].forEach(button => {
+      button.addEventListener('click', event => {
+        event.preventDefault();
+        headerMobileMenu.classList.toggle('opened');
+      })
     })
-  })
 
-})()
+  })()
 </script>
