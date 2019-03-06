@@ -188,3 +188,18 @@
     text-align: center;
   }
 }
+
+@media (max-width: 700px) {
+  .intro__grid {
+    margin-top: 20px;
+  }
+  .intro__text {
+    font-size: 26px;
+  }
+  .intro__note {
+    font-size: 14px;
+  }
+  .intro__download {
+    margin-top: 24px;
+  }
+}

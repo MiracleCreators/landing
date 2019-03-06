@@ -45,3 +45,21 @@
     left: -40px;
   }
 }
+
+@media (max-width: 700px) {
+  .callToAction {
+    padding-top: 60px;
+    .button--big {
+      padding: 16px 24px;
+      font-size: 14px;
+    }
+  }
+  .callToAction__title {
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .callToAction__ninjia {
+    width: 250px;
+  }
+}
