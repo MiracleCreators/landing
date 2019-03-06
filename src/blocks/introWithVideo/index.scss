@@ -232,6 +232,14 @@
 }
 
 @media (max-width: 767px) {
+  .intro__video{
+    max-width: 310px;
+    min-height: unset;
+    .button__play {
+      --height: 40px;
+      padding: 16px 24px;
+    }
+  }
   .intro__grid {
     margin-top: 20px;
   }
@@ -243,5 +251,19 @@
   }
   .intro__download {
     margin-top: 24px;
+  }
+}
+
+@media (max-width: 320px) {
+  .intro__video{
+    max-width: 270px;
+    min-height: unset;
+    .button__play {
+      --height: 40px;
+      padding: 8px 16px;
+      font-size: 12px;
+      top: calc(50% - (var(--height) / 2) + 10px);
+      left: calc(50% - 70px)
+    }
   }
 }
