@@ -35,27 +35,30 @@ header {
 }
 
 .header__nav .dropdown {
-  margin-top: 20px;
-  transform: translateY(-20px);
-  pointer-events: none;
-  opacity: 0;
+  padding-top: 30px;
   position: absolute;
-  top: 30px;
+  top: 20px;
   left: -220px;
   z-index: 999;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.header__nav .dropdown__inner {
+  transform: translateY(-20px);
   padding: 15px 0;
   width: 345px;
-  background-color: #2C2C31;
+  background-color: #2c2c31;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.49);
   border-radius: 5px;
   transition: all 0.3s;
-  z-index: 5;
+
   &::after {
     content: url(../img/headerDropdown/dropdown-triangle.svg);
     width: 8px;
     height: 8px;
     position: absolute;
-    top: -13px;
+    top: -12px;
     right: 92px;
     z-index: 999;
     color: white;
@@ -79,10 +82,10 @@ header {
   line-height: 1.25;
   text-decoration: none;
   color: #ffffff;
-  background-color: #2C2C31;
+  background-color: #2c2c31;
   transition: all 0.3s;
   &:hover {
-    background-color: #34343A;
+    background-color: #34343a;
   }
 }
 
@@ -94,7 +97,7 @@ header {
   svg {
     font-size: 30px;
     path {
-      fill: #9292A1;
+      fill: #9292a1;
     }
   }
 }
@@ -111,7 +114,7 @@ header {
   position: relative;
   padding: 4px 6px;
   margin-top: -4px;
-} 
+}
 
 .header__socials {
   align-items: center;
@@ -154,7 +157,7 @@ header {
 @media only screen and (max-width: 768px) {
   .header__socials,
   .header__button,
-  .float__button, 
+  .float__button,
   .header__nav {
     display: none;
   }
