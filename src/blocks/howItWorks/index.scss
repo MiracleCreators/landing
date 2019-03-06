@@ -66,6 +66,7 @@
   display: grid;
   grid-template-areas: "title picture" "text picture" "features picture" "controls picture";
   grid-template-columns: 1fr minmax(60%, max-content);
+  grid-template-rows: min-content min-content min-content 1fr;
   grid-gap: 30px 100px;
 
   .howItWorks__item--right & {
@@ -237,7 +238,6 @@
   .howItWorks.autoruns {
     padding-top: 80px;
   }
-
 }
 
 @media (max-width: 700px) {
