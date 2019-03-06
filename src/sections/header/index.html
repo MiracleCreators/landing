@@ -4,10 +4,55 @@
       <img src="./img/frame_ninjia_logo.png" alt="frame ninjia logo"/>
     </a>
   </div>
-  <nav class="header__nav">
-    <a href="/examples.html">Examples</a>
-    <a href="/learn.html">Learn</a>
-    <a href="/about.html">About</a>
+  <nav class="header__nav relative">
+    <ul>
+      <li><a href="/examples.html">Examples</a></li>
+      <li><a href="/learn.html">Learn</a></li>
+      <li class="header-nav__item--dropdown">
+        <a href="/about.html">About</a>
+        <ul class="dropdown">
+            <li class="dropdown__item">
+              <a href="/about.html#story" class="dropdown__link">
+                <div class="dropdown__icon">
+                  <include src="img/headerDropdown/story.svg"></include>
+                </div>
+                <div class="dropdown__text-wrap">
+                  <div class="dropdown__text"><b>Story</b></div>
+                  <div class="dropdown__text dropdown__text--transparent">
+                    Once upon a time
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <a href="/about.html#team" class="dropdown__link">
+                <div class="dropdown__icon">
+                  <include src="img/headerDropdown/team.svg"></include>
+                </div>
+                <div class="dropdown__text-wrap">
+                  <div class="dropdown__text"><b>Team</b></div>
+                  <div class="dropdown__text dropdown__text--transparent">
+                    Meet our team
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="dropdown__item">
+              <a href="/about.html#roadmap" class="dropdown__link">
+                <div class="dropdown__icon">
+                  <include src="img/headerDropdown/roadmap.svg"></include>
+                </div>
+                <div class="dropdown__text-wrap">
+                  <div class="dropdown__text"><b>Roadmap</b></div>
+                  <div class="dropdown__text dropdown__text--transparent">
+                    Learn more about our future
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>        
+      </li>
+    </ul>
   </nav>
   <div class="header__socials">
     <a href="https://twitter.com/FrameNinja_HQ" target="_blank">
