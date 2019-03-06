@@ -94,7 +94,8 @@
   animation-name: play-button-pulse;
   animation-duration: 2.75s;
   animation-iteration-count: infinite;
-  svg {
+  svg,
+  b {
     pointer-events: none;
   }
 }

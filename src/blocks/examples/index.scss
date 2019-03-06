@@ -101,6 +101,7 @@
 }
 .modal.opened {
   display: flex;
+  z-index: 99;
 }
 
 .modal__backdrop {
