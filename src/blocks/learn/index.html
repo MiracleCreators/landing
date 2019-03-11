@@ -15,16 +15,16 @@
         <a href="#">Getting started with <b>Chains</b></a>
         <a href="#">Getting started with <b>Scripts</b></a>
         <a href="#">Getting started with <b>Autoruns</b></a>
-        <a href="#">Getting started with <b>Chat</b></a>
+        <!-- <a href="#">Getting started with <b>Chat</b></a> -->
         <a href="#"><b>Animations Basics</b></a>
-        <a href="#"><b>Variables Basics</b></a>
+        <!-- <a href="#"><b>Variables Basics</b></a> -->
       </nav>
     </div>
     <div class="learn__video">
       <div class="learn__video__inner">
         <iframe
           class="learn__video__inner__iframe"
-          src="https://www.youtube.com/embed/eEJTPdJevVk"
+          src="https://www.youtube.com/embed/h_VbH443y9M?rel=0"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
@@ -38,7 +38,7 @@
 (() => {
   const links = Array.prototype.slice.call(document.querySelectorAll('.learn__nav > a'))
   const video = document.querySelector('.learn__video__inner__iframe')
-  const videos = ['eEJTPdJevVk', 'MmhKM_DJFFk', 'uNpaEB0KfTU', 'S1ax56m9csQ', 'x14NqUU3GJc', 'Fj42Ul470WU', 'AtOCy9Ynd0E']
+  const videos = ['h_VbH443y9M', '3JGk3jc1hVw', 'H8Ar4aBLft0', '4OZMEDWknXU', /*'---', */'Y3X1D7pyDas', /*'AtOCy9Ynd0E' */]
   const mobileLinkSelector = document.getElementById('learn__video__mobile-link')
   
   const mobileMenu = document.querySelector('.learn__nav')
@@ -46,7 +46,7 @@
   links.forEach((link, idx) => {
     link.onclick = evt => {
       evt.preventDefault()
-      video.setAttribute('src', `https://www.youtube.com/embed/${videos[idx]}`)
+      video.setAttribute('src', `https://www.youtube.com/embed/${videos[idx]}?rel=0`)
       links.forEach(link => {
         link.classList.remove('active')
       })

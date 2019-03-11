@@ -3,6 +3,7 @@
 }
 
 .examples__title {
+  background: #1e1823;
   font-size: 68px;
   padding: 100px 0;
   text-align: center;
@@ -20,6 +21,7 @@
   display: grid;
   grid-template-areas: "title video" "integrations video" "text video" "controls video";
   grid-template-columns: 1fr minmax(50%, max-content);
+  grid-template-rows: min-content min-content min-content 1fr;
   grid-gap: 30px 150px;
 }
 
@@ -28,6 +30,12 @@
   font-weight: 500;
   line-height: 1.5;
   grid-area: title;
+
+  svg {
+    height: auto;
+    width: auto;
+    vertical-align: middle;
+  }
 }
 
 .example__integrations {
@@ -46,6 +54,7 @@
   font-size: 18px;
   grid-area: text;
   line-height: 1.5;
+  width: 420px;
 }
 
 .example__controls {
@@ -70,24 +79,29 @@
 
 .play__button {
   --size: 60px;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  bottom: 0;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
 
   svg {
+    border-radius: 50%;
     height: calc(var(--size) / 2);
     width: calc(var(--size) / 2);
     pointer-events: none;
   }
-
 }
 
 .play__button--green {
-  background-color: var(--primary-green)
+  svg {
+    background-color: var(--primary-green);
+    padding: calc(var(--size) / 2);
+  }
 }
 
 .modal {
@@ -105,7 +119,7 @@
 }
 
 .modal__backdrop {
-  background-color: rgba(0, 0, 0, 0.75)
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .modal__controls {
@@ -117,6 +131,7 @@
   width: var(--size);
   height: var(--size);
   margin-left: auto;
+  margin-bottom: 10px;
 
   svg {
     width: var(--size);
@@ -165,9 +180,18 @@
   color: var(--primary-orange);
   display: flex;
   padding: 20px 30px;
+  transition: opacity 0.2s ease-out;
 
   > svg {
     margin-right: 10px;
+  }
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &:active {
+    opacity: 0.5;
   }
 }
 
@@ -193,6 +217,7 @@
 
   .example__text {
     font-size: 16px;
+    width: auto;
   }
 
   .example__video {
@@ -213,7 +238,6 @@
     width: 90%;
     height: 50%;
   }
-
 }
 
 @media (max-width: 768px) {

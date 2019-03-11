@@ -1,76 +1,83 @@
 <div class="gallery block relative">
   <div class="container container--medium">
     <h2 class="block__title">Examples</h2>
-    <p class="block__text">Learn how to use FrameNinja to get all the infinite possibilities.</p>
-    <p class="block__text">Watch guided video and follow along with an example cases.</p>
+    <p class="block__text">Go through our showcase to find out what you can do using <b>FrameNinja</b></p>
 
     <div class="gallery__grid">
+      
       <div class="gallery__item" data-modal="gallery__modal">
-        <div class="gallery__item__picture" data-modal="gallery__modal">
-          <div class="gallery__item__picture__overlay" data-modal="gallery__modal">
+        <div class="gallery__item__picture">
+          <div class="gallery__item__picture__overlay">
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
         </div>
         <div class="gallery__item__title">Death Counter</div>
       </div>
+
       <div class="gallery__item" data-modal="gallery__modal">
-        <div class="gallery__item__picture" data-modal="gallery__modal">
-          <div class="gallery__item__picture__overlay" data-modal="gallery__modal">
+        <div class="gallery__item__picture">
+          <div class="gallery__item__picture__overlay">
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
         </div>
         <div class="gallery__item__title">Super Feature</div>
       </div>
+
       <div class="gallery__item" data-modal="gallery__modal">
-        <div class="gallery__item__picture" data-modal="gallery__modal">
-          <div class="gallery__item__picture__overlay" data-modal="gallery__modal">
+        <div class="gallery__item__picture">
+          <div class="gallery__item__picture__overlay">
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
         </div>
         <div class="gallery__item__title">Public Poll</div>
       </div>
+
       <div class="gallery__item" data-modal="gallery__modal">
-        <div class="gallery__item__picture" data-modal="gallery__modal">
-          <div class="gallery__item__picture__overlay" data-modal="gallery__modal">
+        <div class="gallery__item__picture">
+          <div class="gallery__item__picture__overlay">
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
         </div>
         <div class="gallery__item__title">Public twit</div>
       </div>
+      
       <div class="gallery__item" data-modal="gallery__modal">
-        <div class="gallery__item__picture" data-modal="gallery__modal">
-          <div class="gallery__item__picture__overlay" data-modal="gallery__modal">
+        <div class="gallery__item__picture">
+          <div class="gallery__item__picture__overlay">
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
         </div>
         <div class="gallery__item__title">One more cool feature</div>
       </div>
+      
       <div class="gallery__item" data-modal="gallery__modal">
-        <div class="gallery__item__picture" data-modal="gallery__modal">
-          <div class="gallery__item__picture__overlay" data-modal="gallery__modal">
+        <div class="gallery__item__picture">
+          <div class="gallery__item__picture__overlay">
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
         </div>
         <div class="gallery__item__title">Another great feature</div>
       </div>
+      
       <div class="gallery__item" data-modal="gallery__modal">
-        <div class="gallery__item__picture" data-modal="gallery__modal">
-          <div class="gallery__item__picture__overlay" data-modal="gallery__modal">
+        <div class="gallery__item__picture">
+          <div class="gallery__item__picture__overlay">
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
         </div>
         <div class="gallery__item__title">Magic feature</div>
       </div>
+      
       <div class="gallery__item" data-modal="gallery__modal">
-        <div class="gallery__item__picture" data-modal="gallery__modal">
-          <div class="gallery__item__picture__overlay" data-modal="gallery__modal">
+        <div class="gallery__item__picture">
+          <div class="gallery__item__picture__overlay">
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
@@ -118,7 +125,7 @@
         event.preventDefault()
         event.stopImmediatePropagation()
 
-        const buttonTarget = event.target.getAttribute('data-modal')
+        const buttonTarget = event.currentTarget.getAttribute('data-modal')
         document.getElementById(buttonTarget).classList.toggle('opened')
       })
     })

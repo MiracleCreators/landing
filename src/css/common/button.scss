@@ -34,6 +34,11 @@
     padding: 16px 50px;
   }
 
+  &--prebig {
+    font-size: 14px;
+    padding: 17px 30px;
+  }
+
   &--big {
     font-size: 18px;
     padding: 25px 50px;
@@ -53,23 +58,35 @@
   }
 
   &--green {
-    --btn-color: var(--btn-green);
     --btn-bgcolor: var(--primary-green);
+
+    &.btn--bordered {
+      --btn-color: var(--btn-green);
+    }
   }
 
   &--orange {
-    --btn-color: var(--btn-orange);
     --btn-bgcolor: var(--primary-orange);
+
+    &.btn--bordered {
+      --btn-color: var(--btn-orange);
+    }
   }
 
   &--red {
-    --btn-color: var(--primary-white);
     --btn-bgcolor: var(--primary-red);
+
+    &.btn--bordered {
+      --btn-color: var(--primary-white);
+    }
   }
 
   &--violet {
-    --btn-color: var(--btn-violet);
     --btn-bgcolor: var(--primary-violet);
+
+    &.btn--bordered {
+      --btn-color: var(--btn-violet);
+    }
   }
 
   &--twitter {

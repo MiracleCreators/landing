@@ -100,24 +100,26 @@
   }
 }
 
-@keyframes play-button-pulse
-{
+@keyframes play-button-pulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0px rgba(156,100,255, 0.5), 0 0 0px rgba(156,100,255, 0.75);
+    box-shadow: 0 0 0 0px rgba(156, 100, 255, 0.5),
+      0 0 0px rgba(156, 100, 255, 0.75);
   }
   50% {
     transform: scale(1.1);
-    box-shadow: 0 0 0 25px rgba(156,100,255, 0), 0 0 0 12.5px rgba(156,100,255, 0);
+    box-shadow: 0 0 0 25px rgba(156, 100, 255, 0),
+      0 0 0 12.5px rgba(156, 100, 255, 0);
   }
   10% {
     transform: scale(1);
-    box-shadow: 0 0 0 0px rgba(156,100,255, 0.5), 0 0 0px rgba(156,100,255, 0.75);
+    box-shadow: 0 0 0 0px rgba(156, 100, 255, 0.5),
+      0 0 0px rgba(156, 100, 255, 0.75);
   }
 }
 
 .intro__note {
-  color: #EBEBEB;
+  color: #ebebeb;
   font-size: 18px;
   grid-area: note;
   margin-top: 20px;
@@ -128,9 +130,9 @@
 }
 
 .scroll__down {
-  --color: #EBEBEB;
+  --color: #ebebeb;
   position: relative;
-  top: 100px;
+  bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -138,8 +140,9 @@
   color: var(--color);
   opacity: 0.5;
   cursor: pointer;
+  position: absolute;
   transition: 0.3s ease;
-  
+
   &:hover {
     --color: var(--primary-orange);
     opacity: 1;
@@ -154,12 +157,11 @@
 }
 
 .scroll__down svg path {
-  fill: var(--color); 
+  fill: var(--color);
   transition: 0.3s ease;
 }
 
 @media (max-width: 1440px) {
-
   .intro {
     padding-top: 60px;
   }
@@ -171,11 +173,9 @@
   .scroll__down {
     display: none;
   }
-
 }
 
 @media (max-width: 1024px) {
-
   .intro {
     padding-top: 100px;
     justify-content: initial;
@@ -218,7 +218,7 @@
     }
   }
 
-  .howItWorks__controls-images img:nth-of-type(3){
+  .howItWorks__controls-images img:nth-of-type(3) {
     display: none;
   }
 
@@ -228,13 +228,13 @@
 }
 
 @media (max-width: 768px) {
-  .howItWorks__controls-images img:nth-of-type(3){
+  .howItWorks__controls-images img:nth-of-type(3) {
     display: initial;
   }
 }
 
 @media (max-width: 767px) {
-  .intro__video{
+  .intro__video {
     max-width: 310px;
     min-height: unset;
     .button__play {
@@ -263,7 +263,7 @@
   .intro {
     padding-bottom: 140px;
   }
-  .intro__video{
+  .intro__video {
     max-width: 270px;
     min-height: unset;
     .button__play {
@@ -271,7 +271,7 @@
       padding: 8px 16px;
       font-size: 12px;
       top: calc(50% - (var(--height) / 2) + 10px);
-      left: calc(50% - 70px)
+      left: calc(50% - 70px);
     }
   }
   .intro__grid {

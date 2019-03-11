@@ -9,7 +9,7 @@
 
 .intro__grid {
   display: grid;
-  grid-template-areas: "text picture" "integrations picture" "download picture" "note picture";
+  grid-template-areas: "text video" "note video" "integrations video" "download video";
   grid-template-columns: auto auto;
   grid-template-rows: repeat(4, min-content);
 }
@@ -48,7 +48,7 @@
 }
 
 .intro__text {
-  font-size: 42px;
+  font-size: 46px;
   grid-area: text;
   line-height: 1.5;
 }
@@ -62,20 +62,75 @@
   }
 }
 
-.intro__picture {
-  grid-area: picture;
+.intro__video {
+  align-items: center;
+  display: flex;
+  grid-area: video;
+  justify-content: center;
+  min-height: 300px;
+  position: relative;
+  width: 630px;
+}
+
+.intro__video .video__wrapper {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.intro__video .button__play {
+  --height: 60px;
+  height: var(--height);
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 90px);
+  background-color: var(--primary-violet);
+  border-color: var(--primary-violet);
+  border-radius: calc(var(--height) / 2);
+  animation-name: play-button-pulse;
+  animation-duration: 2.75s;
+  animation-iteration-count: infinite;
+  svg,
+  b {
+    pointer-events: none;
+  }
+}
+
+@keyframes play-button-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0px rgba(156, 100, 255, 0.5),
+      0 0 0px rgba(156, 100, 255, 0.75);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 25px rgba(156, 100, 255, 0),
+      0 0 0 12.5px rgba(156, 100, 255, 0);
+  }
+  10% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0px rgba(156, 100, 255, 0.5),
+      0 0 0px rgba(156, 100, 255, 0.75);
+  }
 }
 
 .intro__note {
-  color: var(--grey-violet);
+  color: #ebebeb;
+  font-size: 18px;
   grid-area: note;
   margin-top: 20px;
+  line-height: 1.5;
+  b {
+    font-weight: 700;
+  }
 }
 
 .scroll__down {
-  --color: #EBEBEB;
+  --color: #ebebeb;
   position: relative;
-  top: 100px;
+  bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,8 +138,9 @@
   color: var(--color);
   opacity: 0.5;
   cursor: pointer;
+  position: absolute;
   transition: 0.3s ease;
-  
+
   &:hover {
     --color: var(--primary-orange);
     opacity: 1;
@@ -99,12 +155,11 @@
 }
 
 .scroll__down svg path {
-  fill: var(--color); 
+  fill: var(--color);
   transition: 0.3s ease;
 }
 
 @media (max-width: 1440px) {
-
   .intro {
     padding-top: 60px;
   }
@@ -116,13 +171,11 @@
   .scroll__down {
     display: none;
   }
-
 }
 
 @media (max-width: 768px) {
-
   .intro {
-    padding-top: 100px; 
+    padding-top: 100px;
   }
 
   .intro__grid {

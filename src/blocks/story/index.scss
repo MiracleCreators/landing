@@ -61,6 +61,12 @@
   margin-top: auto;
 }
 
+.story__inner__button {
+  svg {
+    color: var(--primary-orange);
+  }
+}
+
 .story__inner__controls__text {
   font-size: 14px;
   line-height: 1.5;
