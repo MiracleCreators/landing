@@ -19,7 +19,7 @@
       <div class="example__video">
         <img src="./img/examples/1.png" />
         
-        <a class="play__button play__button--green" data-modal="modal__example">
+        <a class="play__button play__button--orange" data-video="/video/examples/webcamposition.mp4">
           <include src="img/icons/play.svg"></include>
         </a>
       </div>
@@ -62,6 +62,10 @@
       </div>
       <div class="example__video">
         <img src="./img/examples/3.png" />
+        
+        <a class="play__button play__button--green" data-video="/video/examples/afkgo.mp4">
+          <include src="img/icons/play.svg"></include>
+        </a>
       </div>
     </div>
   </div>
@@ -73,36 +77,3 @@
     </a>
   </div>
 </section>
-
-<div id="modal__example" class="modal modal__backdrop" data-modal="modal__example">
-  <div class="modal__container">
-    <div class="modal__controls">
-      <a href="#" class="modal__controls--close" data-modal="modal__example">
-        <include src="img/icons/mobile-menu-close.svg"></include>
-      </a>
-    </div>
-    <div class="modal__content">
-      <div class="modal__content-video">
-        <iframe src="https://www.youtube.com/embed/eEJTPdJevVk?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script>
-(() => {
-
-  const modalButtons = document.querySelectorAll('[data-modal]');
-
-  modalButtons.forEach(button => {
-    button.addEventListener('click', event => {
-      event.preventDefault();
-      event.stopImmediatePropagation();
-
-      const buttonTarget = event.target.getAttribute('data-modal');
-      document.getElementById(buttonTarget).classList.toggle('opened');
-    })
-  })
-
-})();
-</script>

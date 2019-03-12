@@ -1,0 +1,82 @@
+<div id="plainVideoModal" class="plainVideoModal plainVideoModal__backdrop" data-role="close">
+  <div class="plainVideoModal__container">
+    <div class="plainVideoModal__controls">
+      <a href="#" class="plainVideoModal__controls--close" data-role="close">
+        <include src="img/icons/mobile-menu-close.svg"></include>
+      </a>
+    </div>
+    <div class="plainVideoModal__content">
+      <div class="plainVideoModal__content-video">
+        <video autoplay loop preload="metadata">
+          <source src="#" type="video/mp4" />
+          Your browser does not support the HTML5 video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const modalButtons = document.querySelectorAll('[data-video]');
+  const modal = document.querySelector('#plainVideoModal')
+  const video = document.querySelector('#plainVideoModal video')
+  const source = document.querySelector('#plainVideoModal source')
+  const closers = document.querySelectorAll('#plainVideoModal, #plainVideoModal, [data-role="close"]')
+  let closeTimeout
+
+  const openModal = () => {
+    modal.classList.remove('opened')
+    clearTimeout(closeTimeout)
+    modal.classList.add('opened')
+    setTimeout(() => {
+      modal.classList.add('animated')
+    }, 10)
+  }
+
+  const closeModal = () => {
+    modal.classList.remove('animated')
+    closeTimeout = setTimeout(() => {
+      modal.classList.remove('opened')
+    }, 200)
+  }
+
+  const handleLoad = () => {
+    openModal()
+    video.removeEventListener('load', handleLoad)
+  }
+  
+  modalButtons.forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const url = event.currentTarget.dataset.video
+
+      if (url === source.getAttribute('src')) {
+        openModal()
+        return 
+      } else {
+        source.setAttribute('src', url)
+        video.currentTime = 0
+        video.load();
+      }
+    })
+  })
+
+  closers.forEach(closer => {
+    closer.addEventListener('click', event => {
+      if (event.target !== event.currentTarget) {
+        return
+      }
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      closeModal()
+    })
+  })
+
+  video.addEventListener('canplay', openModal)
+
+})()
+</script>

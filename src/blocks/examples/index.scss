@@ -92,15 +92,21 @@
   svg {
     border-radius: 50%;
     height: calc(var(--size) / 2);
-    width: calc(var(--size) / 2);
-    pointer-events: none;
-  }
-}
-
-.play__button--green {
-  svg {
-    background-color: var(--primary-green);
     padding: calc(var(--size) / 2);
+    pointer-events: none;
+    width: calc(var(--size) / 2);
+  }
+
+  &--orange {
+    svg {
+      background-color: var(--primary-orange);
+    }
+  }
+
+  &--green {
+    svg {
+      background-color: var(--primary-green);
+    }
   }
 }
 
