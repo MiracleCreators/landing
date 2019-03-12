@@ -17,8 +17,8 @@
 }
 
 .download__step {
-  display: flex;
   align-items: center;
+  display: flex;
   flex-direction: column;
 
   &--left {
@@ -45,9 +45,10 @@
 }
 
 .download__step__requirements {
-  color: var(--grey-violet);
+  color: #ebebeb;
   line-height: 1.5;
   margin-top: 20px;
+  opacity: 0.6;
 }
 
 .download__step__list {

@@ -83,6 +83,14 @@
   position: absolute;
   height: 30px;
   width: 30px;
+
+  &--done:before {
+    background: url("/img/icons/check.svg") center no-repeat;
+    display: inline-block;
+    content: "";
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .roadmap__item__text {
@@ -99,7 +107,6 @@
 }
 
 @media only screen and (max-width: 767px) {
-
   .roadmap {
     box-sizing: border-box;
     padding: 20px 0 100px;
@@ -117,5 +124,4 @@
   .roadmap__block {
     margin-left: 0px;
   }
-
 }

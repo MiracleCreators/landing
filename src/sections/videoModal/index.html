@@ -1,0 +1,74 @@
+<div id="videoModal" class="modal modal__backdrop" data-role="close">
+  <div class="modal__container">
+    <div class="modal__controls">
+      <a href="#" class="modal__controls--close" data-role="close">
+        <include src="img/icons/mobile-menu-close.svg"></include>
+      </a>
+    </div>
+    <div class="modal__content">
+      <div class="modal__content-video">
+        <iframe src="https://www.youtube.com/embed/eEJTPdJevVk?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const modalButtons = document.querySelectorAll('[data-video]');
+  const modal = document.querySelector('#videoModal')
+  const video = document.querySelector('#videoModal iframe')
+  const closers = document.querySelectorAll('#videoModal [data-role="close"]')
+  let closeTimeout
+
+  const openModal = () => {
+    modal.classList.remove('opened')
+    clearTimeout(closeTimeout)
+    modal.classList.add('opened')
+    setTimeout(() => {
+      modal.classList.add('animated')
+    }, 10)
+  }
+
+  const closeModal = () => {
+    modal.classList.remove('animated')
+    closeTimeout = setTimeout(() => {
+      modal.classList.remove('opened')
+    }, 200)
+  }
+
+  const handleLoad = () => {
+    openModal()
+    video.removeEventListener('load', handleLoad)
+  }
+  
+  modalButtons.forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const id = event.target.getAttribute('data-video')
+      const url = `https://youtube.com/embed/${id}?rel=0`
+
+      if (url === video.getAttribute('src')) {
+        openModal()
+        return 
+      } else {
+        video.setAttribute('src', url)
+        video.addEventListener('load', handleLoad)
+      }
+
+    })
+  })
+
+  closers.forEach(closer => {
+    closer.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      closeModal()
+    })
+  })
+
+})()
+</script>
