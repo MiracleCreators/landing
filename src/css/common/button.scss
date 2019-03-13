@@ -29,6 +29,11 @@
     }
   }
 
+  &--tiny {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+
   &--medium {
     font-size: 16px;
     padding: 16px 50px;
@@ -51,6 +56,10 @@
 
   &--full-width {
     width: 100%;
+  }
+
+  &--bold {
+    font-weight: 600;
   }
 
   &--blue {

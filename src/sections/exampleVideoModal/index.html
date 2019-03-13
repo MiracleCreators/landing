@@ -1,0 +1,100 @@
+<div id="galleryModal" class="gallery__modal gallery__modal__backdrop" data-role="close">
+  <div class="gallery__modal__container relative">
+    <div class="gallery__modal__controls">
+      <a href="#" class="gallery__modal__controls--close" data-role="close">
+        <include src="img/icons/gallery_modal_close.svg"></include>
+      </a>
+    </div>
+    <div class="gallery__modal__content">
+      <video autoplay loop preload="metadata">
+        <source src="#" type="video/mp4" />
+        Your browser does not support the HTML5 video tag.
+      </video>
+    </div>
+    <h3 class="gallery__modal__title">
+      Random title
+    </h3>
+    <div class="gallery__modal__actions">
+      <a href="/download.html" class="button button--blue">
+        <span>Download <b>FrameNinja</b></span>
+      </a>
+      <a href="#" class="button button--red">
+        <span>How to <b>build it?</b></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const modalButtons = document.querySelectorAll('[data-example]');
+  const modal = document.querySelector('#galleryModal')
+  const video = modal.querySelector('video')
+  const source = video.querySelector('source')
+  const title = modal.querySelector('h3')
+  const closers = document.querySelectorAll('#galleryModal, #galleryModal, [data-role="close"]')
+  let shouldOpen = true, closeTimeout
+
+  const openModal = () => {
+    if (!shouldOpen) {
+      return 
+    }
+    shouldOpen = false
+    modal.classList.remove('opened')
+    clearTimeout(closeTimeout)
+    modal.classList.add('opened')
+    setTimeout(() => {
+      modal.classList.add('animated')
+    }, 10)
+  }
+
+  const closeModal = () => {
+    shouldOpen = true
+    modal.classList.remove('animated')
+    closeTimeout = setTimeout(() => {
+      modal.classList.remove('opened')
+    }, 200)
+  }
+
+  const handleLoad = () => {
+    openModal()
+    video.removeEventListener('load', handleLoad)
+  }
+  
+  modalButtons.forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      const targetUrl = event.currentTarget.dataset.example
+      const targetTitle = event.currentTarget.dataset.title
+
+      if (targetUrl === source.getAttribute('src')) {
+        video.currentTime = 0
+        openModal()
+        return 
+      } else {
+        source.setAttribute('src', targetUrl)
+        title.innerHTML = targetTitle
+        video.currentTime = 0
+        video.load();
+      }
+    })
+  })
+
+  closers.forEach(closer => {
+    closer.addEventListener('click', event => {
+      if (event.target !== event.currentTarget) {
+        return
+      }
+      event.preventDefault();
+      event.stopImmediatePropagation();
+
+      closeModal()
+    })
+  })
+
+  video.addEventListener('canplay', openModal)
+
+})()
+</script>

@@ -1,0 +1,45 @@
+.cookie {
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  bottom: 45px;
+  color: #ffffff;
+  display: none;
+  padding: 20px;
+  position: fixed;
+  right: 85px;
+  width: 440px;
+  z-index: 2;
+
+  &.opened {
+    display: block;
+  }
+}
+
+.cookie__text {
+  font-size: 16px;
+  line-height: 1.5;
+  padding-right: 30px;
+}
+
+.cookie__controls {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .cookie {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    width: auto;
+  }
+
+  .cookie__text {
+    padding-right: 0;
+  }
+
+  .cookie__controls {
+    > button {
+      width: 100%;
+    }
+  }
+}

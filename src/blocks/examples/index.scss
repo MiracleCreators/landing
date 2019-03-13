@@ -166,6 +166,10 @@
 
   .example__video {
     min-height: 400px;
+
+    > img {
+      max-width: 100%;
+    }
   }
 
   .example__controls {

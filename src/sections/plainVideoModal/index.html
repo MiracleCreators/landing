@@ -23,9 +23,13 @@
   const video = document.querySelector('#plainVideoModal video')
   const source = document.querySelector('#plainVideoModal source')
   const closers = document.querySelectorAll('#plainVideoModal, #plainVideoModal, [data-role="close"]')
-  let closeTimeout
+  let shouldOpen = true, closeTimeout
 
   const openModal = () => {
+    if (!shouldOpen) {
+      return 
+    }
+    shouldOpen = false
     modal.classList.remove('opened')
     clearTimeout(closeTimeout)
     modal.classList.add('opened')
@@ -35,6 +39,7 @@
   }
 
   const closeModal = () => {
+    shouldOpen = true
     modal.classList.remove('animated')
     closeTimeout = setTimeout(() => {
       modal.classList.remove('opened')
@@ -55,6 +60,7 @@
 
       if (url === source.getAttribute('src')) {
         openModal()
+        video.currentTime = 0
         return 
       } else {
         source.setAttribute('src', url)

@@ -1,0 +1,23 @@
+<div class="cookie" id="cookiePopup">
+  <p class="cookie__text">By using <b>Frame.Ninja</b>, you agree with our use of cookies to improve performance and enhance your user experience.</p>
+
+  <div class="cookie__controls">
+    <button class="button button--blue button--tiny button--bold" id="acceptCookieBtn">Accept</button>
+  </div>
+</div>
+
+<script>
+(() => {
+  const btn = document.getElementById('acceptCookieBtn')
+  const popup = document.getElementById('cookiePopup')
+
+  btn.onclick = () => {
+    localStorage.cookiesAccepted = 'true'
+    popup.classList.remove('opened')
+  }
+
+  if (!localStorage.cookiesAccepted) {
+    popup.classList.add('opened')
+  }
+})()
+</script>
