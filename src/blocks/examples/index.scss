@@ -193,3 +193,20 @@
     min-height: 280px;
   }
 }
+
+.play__button {
+  > svg {
+    --pulse-color: 156, 100, 255;
+    animation-name: pulse;
+    animation-duration: 2.75s;
+    animation-iteration-count: infinite;
+  }
+
+  &--orange > svg {
+    --pulse-color: 255, 153, 0;
+  }
+
+  &--green > svg {
+    --pulse-color: 31, 198, 108;
+  }
+}

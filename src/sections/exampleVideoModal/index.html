@@ -58,7 +58,7 @@
 
   const handleLoad = () => {
     openModal()
-    video.removeEventListener('load', handleLoad)
+    video.removeEventListener('canplay', handleLoad)
   }
   
   modalButtons.forEach(button => {
@@ -94,7 +94,7 @@
     })
   })
 
-  video.addEventListener('canplay', openModal)
+  video.addEventListener('canplay', handleLoad)
 
 })()
 </script>

@@ -1,0 +1,17 @@
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0px rgba(var(--pulse-color), 0.5),
+      0 0 0px rgba(var(--pulse-color), 0.75);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 25px rgba(var(--pulse-color), 0),
+      0 0 0 12.5px rgba(var(--pulse-color), 0);
+  }
+  10% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0px rgba(var(--pulse-color), 0.5),
+      0 0 0px rgba(var(--pulse-color), 0.75);
+  }
+}
