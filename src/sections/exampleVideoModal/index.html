@@ -14,13 +14,14 @@
     <h3 class="gallery__modal__title">
       Random title
     </h3>
+    <p class="gallery__modal__description">Random description</p>
     <div class="gallery__modal__actions">
       <a href="/download.html" class="button button--blue">
         <span>Download <b>FrameNinja</b></span>
       </a>
-      <a href="#" class="button button--red">
+      <!-- <a href="#" class="button button--red">
         <span>How to <b>build it?</b></span>
-      </a>
+      </a> -->
     </div>
   </div>
 </div>
@@ -32,6 +33,7 @@
   const video = modal.querySelector('video')
   const source = video.querySelector('source')
   const title = modal.querySelector('h3')
+  const description = modal.querySelector('.gallery__modal__description')
   const closers = document.querySelectorAll('#galleryModal, #galleryModal, [data-role="close"]')
   let shouldOpen = true, closeTimeout
 
@@ -68,6 +70,7 @@
 
       const targetUrl = event.currentTarget.dataset.example
       const targetTitle = event.currentTarget.dataset.title
+      const targetDescription = event.currentTarget.dataset.description
 
       if (targetUrl === source.getAttribute('src')) {
         video.currentTime = 0
@@ -76,7 +79,9 @@
       } else {
         source.setAttribute('src', targetUrl)
         title.innerHTML = targetTitle
+        description.innerHTML = targetDescription
         video.currentTime = 0
+        video.addEventListener('canplay', handleLoad)
         video.load();
       }
     })
@@ -93,8 +98,6 @@
       closeModal()
     })
   })
-
-  video.addEventListener('canplay', handleLoad)
 
 })()
 </script>

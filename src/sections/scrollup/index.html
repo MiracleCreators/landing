@@ -1,0 +1,26 @@
+<a href="#" class="scrollup">
+  <include src="img/icons/arrow-up.svg"></include>
+</a>
+
+<script>
+(() => {
+  const scrollToTopButton = document.querySelector('.scrollup')
+  const introSection = document.querySelector('body')
+
+  window.addEventListener('scroll', () => {
+    if (document.documentElement.scrollTop > 900) {
+      scrollToTopButton.classList.add('active')
+    } else {
+      scrollToTopButton.classList.remove('active')
+    }
+  })
+
+  scrollToTopButton.addEventListener('click', evt => {
+    evt.preventDefault()
+    introSection.scrollIntoView({
+      behavior: "smooth"
+    })
+  })
+
+})();
+</script>

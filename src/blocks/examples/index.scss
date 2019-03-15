@@ -38,6 +38,10 @@
   }
 }
 
+.example__title__eye {
+  margin-left: -15px;
+}
+
 .example__integrations {
   align-items: center;
   display: flex;
@@ -61,20 +65,14 @@
   grid-area: controls;
 }
 
-/* Here's the styles for video modal window. Maybe we should create component. */
 .example__video {
   border-radius: 5px;
   grid-area: video;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--dark-violet);
   // padding-top: 56.25%;
   position: relative;
-
-  .example--light & {
-    background: var(--darkest-violet);
-  }
 }
 
 .play__button {

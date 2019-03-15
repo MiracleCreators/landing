@@ -1,0 +1,29 @@
+.scrollup {
+  --size: 50px;
+  align-items: center;
+  background-color: #353434;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  height: var(--size);
+  justify-content: center;
+  left: 60px;
+  opacity: 0.75;
+  position: fixed;
+  bottom: -100px;
+  transition: 0.3s ease;
+  width: var(--size);
+  z-index: 3;
+
+  &.active {
+    bottom: 40px;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  svg {
+    pointer-events: none;
+  }
+}

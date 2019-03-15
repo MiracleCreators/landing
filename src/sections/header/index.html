@@ -5,7 +5,7 @@
     </a>
   </div>
   <nav class="header__nav relative">
-    <ul>
+    <ul class="header__nav__ul">
       <li><a href="/examples.html">Examples</a></li>
       <li><a href="/learn.html">Learn</a></li>
       <li class="header-nav__item--dropdown">
@@ -96,9 +96,13 @@
   // floating header button
   const floatingButton = document.querySelector('.float__button');
 
-  window.onscroll = () => document.documentElement.scrollTop > 900
-    ? floatingButton.classList.add('active')
-    : floatingButton.classList.remove('active');
+  window.addEventListener('scroll', () => {
+    if (document.documentElement.scrollTop > 900) {
+      floatingButton.classList.add('active')
+    } else {
+      floatingButton.classList.remove('active')
+    }
+  })
 
 })()
 </script>

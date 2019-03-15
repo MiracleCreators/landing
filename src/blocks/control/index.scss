@@ -12,7 +12,21 @@
   margin-top: 60px;
 }
 
+.control__joystick {
+  vertical-align: text-top;
+
+  svg {
+    display: inline;
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle;
+    width: auto;
+  }
+}
+
 .control__arrow {
+  display: inline-block;
+  margin: 15px 0 -15px;
   vertical-align: text-top;
 
   svg {

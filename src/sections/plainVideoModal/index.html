@@ -65,6 +65,7 @@
       } else {
         source.setAttribute('src', url)
         video.currentTime = 0
+        video.addEventListener('canplay', handleLoad)
         video.load();
       }
     })
@@ -81,8 +82,6 @@
       closeModal()
     })
   })
-
-  video.addEventListener('canplay', handleLoad)
 
 })()
 </script>

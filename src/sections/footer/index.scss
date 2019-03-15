@@ -34,6 +34,14 @@
   grid-area: socials;
   margin-left: auto;
 
+  a {
+    transition: opacity 0.2s ease-out;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
   a + a {
     margin-left: 10px;
   }
@@ -60,6 +68,11 @@
   display: block;
   font-size: 18px;
   line-height: 1.5;
+  transition: opacity 0.2s ease-out;
+
+  &:hover {
+    opacity: 0.75;
+  }
 
   &--big {
     color: #18181d;
