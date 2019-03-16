@@ -18,6 +18,11 @@
   padding: 100px 0;
   position: relative;
 
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 200px;
+  }
+
   &:after {
     background-position-y: center;
     background-repeat: no-repeat;
