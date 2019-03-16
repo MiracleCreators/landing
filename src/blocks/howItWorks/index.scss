@@ -1,12 +1,21 @@
+.howItWorks {
+  background: var(--background-color);
+  padding-top: 0;
+
+  h2 {
+    padding: 20px 0px 100px 0;
+  }
+}
+
 .howItWorks__title {
   font-size: 68px;
   padding: 100px 0;
   text-align: center;
 }
 
-.howItWorks {
-  background: var(--background-color);
-  padding: 200px 0 100px;
+.howItWorks__item {
+  margin: 100px 0;
+  padding: 100px 0;
   position: relative;
 
   &:after {
@@ -22,33 +31,26 @@
   }
 }
 
-.howItWorks.parent {
-  padding-top: 0;
-  h2 {
-    padding: 20px 0px 100px 0;
-  }
-}
-
-.howItWorks.chains,
-.howItWorks.scripts {
+.howItWorks__item.chains,
+.howItWorks__item.scripts {
   background-position-x: 100%;
 }
 
-.howItWorks.chains {
+.howItWorks__item.chains {
   &:after {
     width: 900px;
     background-image: url(../../img/howItWorks/obs_1.png);
   }
 }
 
-.howItWorks.scripts {
+.howItWorks__item.scripts {
   &:after {
     background-image: url(../../img/howItWorks/obs_2.png);
     width: 900px;
   }
 }
 
-.howItWorks.autoruns {
+.howItWorks__item.autoruns {
   &:after {
     background-image: url(../../img/howItWorks/obs_3.png);
     height: 665px;
@@ -159,8 +161,8 @@
 }
 
 @media (max-width: 1440px) {
-  .howItWorks.chains,
-  .howItWorks.scripts {
+  .howItWorks__item.chains,
+  .howItWorks__item.scripts {
     background-size: auto;
     background-position: 100% 25%;
   }

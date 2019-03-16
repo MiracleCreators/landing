@@ -58,6 +58,10 @@ a {
   z-index: 2;
 }
 
+html:not(.with-focus) a:focus {
+  outline: none;
+}
+
 @import "./common/colors";
 @import "./common/block";
 @import "./common/fullPage";

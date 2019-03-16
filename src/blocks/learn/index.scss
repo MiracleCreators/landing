@@ -43,7 +43,7 @@
 }
 
 .learn__video {
-  background: var(--grey-violet);
+  background: #1a171d;
   flex: 65;
   position: relative;
 }
@@ -112,7 +112,7 @@
       opacity: 0.45;
     }
   }
-  
+
   .learn__nav {
     position: absolute;
     top: 0;
@@ -125,7 +125,7 @@
     opacity: 0;
     transition: 0.3s ease;
   }
-  
+
   .learn__nav.active {
     opacity: 1;
   }
@@ -144,5 +144,4 @@
     background-color: var(--primary-orange);
     color: #845000;
   }
-
 }
