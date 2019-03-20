@@ -2,6 +2,12 @@
   background: #1e1823;
 }
 
+.control__top {
+  background: url(/img/control_noise.svg);
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
 .control__title {
   font-size: 61px;
 }
@@ -41,11 +47,17 @@
 .control__demo {
   align-items: center;
   display: flex;
+  justify-content: center;
   margin-top: 80px;
 }
 
 .control__obs {
   flex: 0 auto;
+  overflow: hidden;
+
+  > video {
+    margin-bottom: -5px;
+  }
 
   > img {
     max-width: 100%;
@@ -64,7 +76,7 @@
 }
 
 .control__ninja {
-  flex: auto;
+  flex: 0 auto;
 
   > img {
     max-width: 100%;

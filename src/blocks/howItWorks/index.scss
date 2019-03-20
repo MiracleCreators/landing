@@ -18,6 +18,10 @@
   padding: 100px 0;
   position: relative;
 
+  &:first-of-type {
+    margin-top: 0;
+  }
+
   &:last-child {
     margin-bottom: 0;
     padding-bottom: 200px;
@@ -109,11 +113,23 @@
 }
 
 .howItWorks__item__picture {
+  align-items: center;
+  display: flex;
   grid-area: picture;
   position: relative;
 
   img {
     border-radius: 8px;
+  }
+}
+
+.howItWorks__item__video {
+  &--chat {
+    overflow: hidden;
+
+    video {
+      margin: 0 -5px 0 5px;
+    }
   }
 }
 
