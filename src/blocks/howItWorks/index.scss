@@ -75,16 +75,17 @@
 
 .howItWorks__item__grid {
   display: grid;
-  grid-gap: 30px 100px;
+  grid-gap: 30px;
   grid-template-areas: "title picture" "text picture" "features picture" "controls picture";
-  grid-template-columns: 1fr minmax(60%, max-content);
+  grid-template-columns: max-content 1fr;
   grid-template-rows: min-content min-content min-content 1fr;
   position: relative;
+  width: 1380px;
   z-index: 2;
 
   .howItWorks__item--right & {
     grid-template-areas: "picture title" "picture text" "picture features" "picture controls";
-    grid-template-columns: minmax(50%, max-content) 1fr;
+    grid-template-columns: 1fr max-content;
   }
 }
 
@@ -116,10 +117,16 @@
   align-items: center;
   display: flex;
   grid-area: picture;
+  justify-content: flex-end;
   position: relative;
+
+  .howItWorks__item--right & {
+    justify-content: flex-start;
+  }
 
   img {
     border-radius: 8px;
+    max-width: 100%;
   }
 }
 
@@ -192,7 +199,7 @@
   }
   .howItWorks__item__grid {
     grid-template-columns: auto;
-    grid-gap: 30px 60px;
+    grid-gap: 30px;
   }
 }
 

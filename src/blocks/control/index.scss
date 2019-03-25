@@ -77,9 +77,10 @@
 
 .control__ninja {
   flex: 0 auto;
+  overflow: hidden;
 
-  > img {
-    max-width: 100%;
+  > video {
+    margin: 0 -1px 0 1px;
   }
 }
 
