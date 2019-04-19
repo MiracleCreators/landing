@@ -8,12 +8,17 @@
   margin-top: 100px;
 }
 
+.container--learn {
+  padding-bottom: 40px;
+  border-bottom: 1px solid #2D2731;
+}
+
 .learn__menu {
-  background: var(--darke-violet);
+  background: var(--background-color);
   flex: 35;
   display: flex;
   justify-content: flex-end;
-  padding: 50px 0;
+  padding-bottom: 50px;
 }
 
 #learn__video__mobile-link {
@@ -21,41 +26,98 @@
 }
 
 .learn__nav {
-  margin-right: 150px;
+  margin-right: auto;
 
   > a {
     display: block;
     border-left: 7px solid transparent;
     color: var(--grey);
+    margin-bottom: 24px;
     font-size: 20px;
     padding-left: 20px;
     transition: color 0.2s ease-out, border-color 0.2s ease-out;
-
-    + a {
-      margin-top: 45px;
-    }
 
     &.active {
       border-color: var(--primary-orange);
       color: var(--primary-orange);
     }
+    
+    &:hover {
+      color: var(--primary-orange);
+    }
   }
+
+  > a:not(.sub-item):not(:first-of-type){
+    margin-top: 36px;
+  }
+
+  > a.sub-item {
+    display: flex;
+    align-items: center;
+    color: var(--grey);
+    font-size: 18px;
+    border-left: none;
+    padding-left: 10px;
+    margin-left: 20px;
+    transition: color 0.2s ease-out, border-color 0.2s ease-out;
+
+    + a.sub-item {
+      margin-top: 20px;
+    }
+
+    &:before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background-color: var(--grey);
+      margin-right: 12px;
+      font-size: 24px;
+    }
+
+    &:hover {
+      color: var(--primary-orange);
+      &:before {
+        background-color: var(--primary-orange);
+      }
+    }
+
+    &.active {
+      color: var(--primary-orange);
+      &:before {
+        background-color: var(--primary-orange);
+      }
+    }
+  }
+
+
 }
 
 .learn__video {
-  background: #1a171d;
+  background: var(--background-color);
   flex: 65;
   position: relative;
 }
 
-.learn__video__inner {
+.learn__video__inner h3 {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.learn__video__inner p {
+  line-height: 1.5;
+}
+
+.learn__video__inner .learn__video__inner__container {
   position: relative;
+  width: 100%;
+  margin-bottom: 40px;
   padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
   height: 0;
 }
 
-.learn__video__inner iframe {
+.learn__video__inner .learn__video__inner__container iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -82,6 +144,11 @@
   .learn__block {
     flex-direction: column;
     margin-top: 50px;
+  }
+
+  .learn__video__inner h3 {
+    font-size: 30px;
+    margin-top: 24px;
   }
 
   .learn__menu {
@@ -131,9 +198,29 @@
   }
 
   .learn__nav > a {
-    padding: 16px;
+    padding: 12px 18px;
+    margin-bottom: 0;
     border-left: none;
     color: #845000;
+  }
+
+  .learn__nav > a.sub-item + a.sub-item {
+    margin-top: 0;
+  }
+
+  .learn__nav > a:not(.sub-item):not(:first-of-type){
+    margin-top: 0;
+  }
+  
+  .learn__nav > a.sub-item {
+    margin-bottom: 0px;
+    margin-left: 0px;
+    padding-left: 20px;
+    color: #845000;
+    font-size: 16px;
+    &:before {
+      background-color: #845000;
+    }
   }
 
   .learn__nav > a + a {
