@@ -46,10 +46,6 @@
     }, 200)
   }
 
-  const handleLoad = () => {
-    openModal()
-    video.removeEventListener('canplay', handleLoad)
-  }
   
   modalButtons.forEach(button => {
     button.addEventListener('click', event => {
@@ -57,17 +53,10 @@
       event.stopImmediatePropagation();
 
       const url = event.currentTarget.dataset.video
-
-      if (url === source.getAttribute('src')) {
-        openModal()
-        video.currentTime = 0
-        return 
-      } else {
-        source.setAttribute('src', url)
-        video.currentTime = 0
-        video.addEventListener('canplay', handleLoad)
-        video.load();
-      }
+      openModal()
+      source.setAttribute('src', url)
+      video.currentTime = 0
+      video.load();
     })
   })
 

@@ -11,19 +11,22 @@
         Your browser does not support the HTML5 video tag.
       </video>
     </div>
-    <h3 class="gallery__modal__title">
-      Random title
-    </h3>
-    <p class="gallery__modal__description">Random description</p>
-    <div class="gallery__modal__actions">
-      <a href="/download" class="button button--blue">
-        <span>Download <b>FrameNinja</b></span>
-      </a>
-      <!-- <a href="#" class="button button--red">
-        <span>How to <b>build it?</b></span>
-      </a> -->
+    <div class="gallery__modal__right">
+      <h3 class="gallery__modal__title"><span id="galleryModalTitle">Random title</span> <a href="#!" id="galleryModalCopy"><include src="img/icons/copy.svg"></include></a></h3>
+      <p class="gallery__modal__description">Random description</p>
+      <div class="gallery__modal__guide">
+        <div class="gallery__modal__line"></div>
+        <h3 class="gallery__modal__title">Tutorial:</h3>
+        <div class="gallery__modal__description">Test</div>
+      </div>
+      <div class="gallery__modal__line"></div>
+      <div class="gallery__modal__discord">
+        <h4 class="gallery__modal__discord__title">Difficulties with Implementation?</h4>
+        <p class="gallery__modal__discord__description">Join our <a href="https://discord.gg/FwmzDbE" target="_blank"><include src="img/icons/discord-color.svg"></include> <span>Discord channel</span></a> and we’ll help you with your creation process.</p>
+      </div>
     </div>
   </div>
+  <input type="text" id="galleryModalLink" style="visibility:hidden"/>
 </div>
 
 <script>
@@ -32,10 +35,13 @@
   const modal = document.querySelector('#galleryModal')
   const video = modal.querySelector('video')
   const source = video.querySelector('source')
-  const title = modal.querySelector('h3')
+  const title = modal.querySelector('#galleryModalTitle')
   const description = modal.querySelector('.gallery__modal__description')
   const closers = document.querySelectorAll('#galleryModal, #galleryModal, [data-role="close"]')
-  let shouldOpen = true, closeTimeout
+  const guideSection = modal.querySelector('.gallery__modal__guide')
+  const copyLink= modal.querySelector('#galleryModalCopy')
+  const galleryModalLink = modal.querySelector('#galleryModalLink')
+  let shouldOpen = true, closeTimeout, currentLink, shareLink
 
   const openModal = () => {
     if (!shouldOpen) {
@@ -68,9 +74,19 @@
       event.preventDefault();
       event.stopImmediatePropagation();
 
+      const guideUrl = event.currentTarget.dataset.guide
       const targetUrl = event.currentTarget.dataset.example
       const targetTitle = event.currentTarget.dataset.title
       const targetDescription = event.currentTarget.dataset.description
+
+      currentLink = targetUrl
+      shareLink = `https://frame.ninja/examples#${targetUrl.split('/').slice(-1)[0].slice(0, -4)}`
+      if (guideUrl) {
+        guideSection.style.display = 'initial'
+      } else {
+        guideSection.style.display = 'none'
+      }
+      location.hash = shareLink.split('#')[1]
 
       if (targetUrl === source.getAttribute('src')) {
         video.currentTime = 0
@@ -98,6 +114,28 @@
       closeModal()
     })
   })
+
+  copyLink.onclick = (evt) => {
+    evt.preventDefault()
+    var input = document.createElement('INPUT');
+    document.body.appendChild(input);
+    input.setAttribute('value', shareLink)
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+  }
+
+  const qs = `${location.hash}`.slice(1)
+  if (!qs) {
+    return
+  }
+
+  for (const el of modalButtons) {
+    if (el.dataset.example.endsWith(`${qs}.mp4`)) {
+      el.click()
+      return
+    }
+  }
 
 })()
 </script>

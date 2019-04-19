@@ -33,10 +33,15 @@
   border-radius: 5px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.21);
   box-sizing: border-box;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas: "video right";
+  grid-template-columns: auto minmax(400px, 1fr);
   height: auto;
   margin: auto;
-  padding: 48px 32px 22px;
-  width: 50%;
+  max-width: 90%;
+  padding: 30px;
+  width: 1440px;
 }
 
 .gallery__modal__controls {
@@ -44,6 +49,11 @@
   position: absolute;
   right: 12px;
   top: 12px;
+}
+
+.gallery__modal__right {
+  color: #343437;
+  grid-area: right;
 }
 
 .gallery__modal__controls--close {
@@ -75,27 +85,52 @@
 }
 
 .gallery__modal__title {
-  color: #181818;
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 700;
-  margin: 30px 0 0;
+  line-height: 1.4;
+
+  svg {
+    height: auto;
+    margin-left: 10px;
+    width: auto;
+  }
 }
 
 .gallery__modal__description {
-  color: #181818;
   font-size: 16px;
   line-height: 1.5;
   margin: 10px 0 0;
 }
 
-.gallery__modal__actions {
-  margin-top: 20px;
+.gallery__modal__line {
+  background: #d5d5d7;
+  height: 1px;
+  margin: 20px 0;
+}
 
-  > .button {
-    padding: 12px 36px;
+.gallery__modal__discord__title {
+  color: #1868df;
+  font-size: 18px;
+  font-weight: 600;
+}
 
-    & + & {
-      margin-left: 10px;
+.gallery__modal__discord__description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 10px 0 0;
+
+  a {
+    color: #343437;
+    font-weight: 500;
+
+    > span {
+      text-decoration: underline;
+    }
+
+    > svg {
+      height: auto;
+      vertical-align: middle;
+      width: auto;
     }
   }
 }
@@ -108,14 +143,5 @@
 
   .gallery__modal__title {
     font-size: 24px;
-  }
-
-  .gallery__modal__actions > .button + .button {
-    margin-left: 0;
-  }
-
-  .gallery__modal__actions > .button:not(:last-of-type) {
-    margin-left: 0;
-    margin-bottom: 10px;
   }
 }

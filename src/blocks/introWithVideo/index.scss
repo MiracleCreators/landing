@@ -50,15 +50,29 @@
 .intro__text {
   font-size: 46px;
   grid-area: text;
-  line-height: 1.5;
+  line-height: 1.25;
 }
 
 .intro__download {
   grid-area: download;
   margin-top: 30px;
-  display: flex;
+
   > a:not(:last-of-type) {
     margin-right: 12px;
+  }
+}
+
+.intro__download__free {
+  margin-top: 20px;
+  font-weight: 500;
+
+  b {
+    background: #ff866b;
+    border-radius: 5px;
+    color: #8f4839;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px 10px;
   }
 }
 
@@ -87,7 +101,7 @@
   --pulse-color: 156, 100, 255;
   height: var(--height);
   position: absolute;
-  top: calc(50% - 20px);
+  top: calc(50% - 20px - 10px);
   left: calc(50% - 90px);
   background-color: var(--primary-violet);
   border-color: var(--primary-violet);

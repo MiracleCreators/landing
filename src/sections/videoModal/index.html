@@ -7,7 +7,7 @@
     </div>
     <div class="videoModal__content">
       <div class="videoModal__content-video">
-        <iframe src="https://www.youtube.com/embed/eEJTPdJevVk?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
@@ -20,6 +20,7 @@
   const video = document.querySelector('#videoModal iframe')
   const closers = document.querySelectorAll('#videoModal, #videoModal [data-role="close"]')
   let closeTimeout
+  let lastVideoUrl
 
   const openModal = () => {
     modal.classList.remove('opened')
@@ -32,14 +33,10 @@
 
   const closeModal = () => {
     modal.classList.remove('animated')
+    video.setAttribute('src', '')
     closeTimeout = setTimeout(() => {
       modal.classList.remove('opened')
     }, 200)
-  }
-
-  const handleLoad = () => {
-    openModal()
-    video.removeEventListener('load', handleLoad)
   }
   
   modalButtons.forEach(button => {
@@ -48,16 +45,10 @@
       event.stopImmediatePropagation();
 
       const id = event.currentTarget.dataset.youtube
-      const url = `https://youtube.com/embed/${id}?rel=0`
+      const url = `https://youtube.com/embed/${id}?rel=0&autoplay=1`
 
-      if (url === video.getAttribute('src')) {
-        openModal()
-        return 
-      } else {
-        video.setAttribute('src', url)
-        video.addEventListener('load', handleLoad)
-      }
-
+      video.setAttribute('src', url)
+      openModal()
     })
   })
 

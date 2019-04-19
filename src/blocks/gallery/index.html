@@ -1,4 +1,4 @@
-<div class="gallery block relative">
+<div id="gallery" class="gallery block relative">
   <div class="container container--medium">
     <h2 class="block__title">Examples</h2>
     <p class="block__text">Go through our showcase to find out what you can do using <b>FrameNinja</b></p>
@@ -11,7 +11,7 @@
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
-          <img src="/img/gallery/i_will_be_back.jpg" />
+          <img src="/img/gallery/i_will_be_back.jpg" data-gif="/img/gallery/gifs/i_will_be_back.gif" />
         </div>
         <div class="gallery__item__title">AFK Screen with Reason & Timer</div>
       </div>
@@ -22,7 +22,7 @@
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
-          <img src="/img/gallery/webcam_position.jpg" />
+          <img src="/img/gallery/webcam_position.jpg" data-gif="/img/gallery/gifs/webcam_position.gif" />
         </div>
         <div class="gallery__item__title">Webcam position selected by Twitch chat</div>
       </div>
@@ -33,7 +33,7 @@
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
-          <img src="/img/gallery/transition.jpg" />
+          <img src="/img/gallery/transition.jpg" data-gif="/img/gallery/gifs/transition.gif" />
         </div>
         <div class="gallery__item__title">Scene Transition</div>
       </div>
@@ -44,7 +44,7 @@
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
-          <img src="/img/gallery/scene_into_scene.jpg" />
+          <img src="/img/gallery/scene_into_scene.jpg" data-gif="/img/gallery/gifs/scene_into_scene.gif" />
         </div>
         <div class="gallery__item__title">Scene B into Scene A transition</div>
       </div>
@@ -55,7 +55,7 @@
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
-          <img src="/img/gallery/chat_vote.jpg" />
+          <img src="/img/gallery/chat_vote.jpg" data-gif="/img/gallery/gifs/chat_vote.gif" />
         </div>
         <div class="gallery__item__title">Voting via Twitch chat</div>
       </div>
@@ -66,7 +66,7 @@
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
-          <img src="/img/gallery/score.jpg" />
+          <img src="/img/gallery/score.jpg" data-gif="/img/gallery/gifs/score.gif" />
         </div>
         <div class="gallery__item__title">The Score of the Match</div>
       </div>
@@ -77,7 +77,7 @@
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
-          <img src="/img/gallery/esports_alert.jpg" />
+          <img src="/img/gallery/esports_alert.jpg" data-gif="/img/gallery/gifs/esports_alert.gif" />
         </div>
         <div class="gallery__item__title">Esports Alert</div>
       </div>
@@ -88,7 +88,7 @@
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
-          <img src="/img/gallery/plus_win.jpg" />
+          <img src="/img/gallery/plus_win.jpg" data-gif="/img/gallery/gifs/plus_win.gif" />
         </div>
         <div class="gallery__item__title">Win Counter</div>
       </div>
@@ -99,7 +99,7 @@
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
-          <img src="/img/gallery/stream_starts_in.jpg" />
+          <img src="/img/gallery/stream_starts_in.jpg" data-gif="/img/gallery/gifs/stream_starts_in.gif" />
         </div>
         <div class="gallery__item__title">Stream Starts in</div>
       </div>
@@ -110,7 +110,7 @@
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
-          <img src="/img/gallery/50_viewers.jpg" />
+          <img src="/img/gallery/50_viewers.jpg" data-gif="/img/gallery/gifs/50_viewers.gif" />
         </div>
         <div class="gallery__item__title">I've got over 50 viewers</div>
       </div>
@@ -121,9 +121,21 @@
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
-          <img src="/img/gallery/newsub_interaction.jpg" />
+          <img src="/img/gallery/newsub_interaction.jpg" data-gif="/img/gallery/gifs/newsub_interaction.gif" />
         </div>
         <div class="gallery__item__title">New Sub Interaction</div>
+      </div>
+      
+      <div class="gallery__item" data-example="/video/gallery/checklist_check.mp4" data-title="Checklist" data-description="">
+        <div class="gallery__item__picture">
+          <div class="gallery__item__picture__overlay">
+            <include src="./img/icons/video-play.svg"></include>
+            View
+          </div>
+          <img src="/img/gallery/favorite_chatter.jpg" />
+          <!-- <img src="/img/gallery/favorite_chatter.jpg" data-gif="/img/gallery/gifs/favorite_chatter.gif" /> -->
+        </div>
+        <div class="gallery__item__title">Checklist</div>
       </div>
       
       <div class="gallery__item" data-example="/video/gallery/favorite_chatter.mp4" data-title="My Favorite Chatter" data-description="Send a message to your chat every 5 minutes mentioning your random viewer. <br />This will increase engagement on your channel.">
@@ -132,10 +144,38 @@
             <include src="./img/icons/video-play.svg"></include>
             View
           </div>
-          <img src="/img/gallery/favorite_chatter.jpg" />
+          <img src="/img/gallery/favorite_chatter.jpg" data-gif="/img/gallery/gifs/favorite_chatter.gif" />
         </div>
         <div class="gallery__item__title">My Favorite Chatter</div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+(() => {
+  const items = document.querySelectorAll('#gallery .gallery__item')
+
+  for (const item of items) {
+    let isOver = false
+    const pic = item.querySelector('.gallery__item__picture img')
+    const src = pic.getAttribute('src')
+
+    if (pic.dataset.gif) {
+      item.addEventListener('mouseover', (evt) => {
+        if (!isOver) {
+          isOver = true
+          pic.setAttribute('src', pic.dataset.gif)
+        }
+      })
+
+      item.addEventListener('mouseleave', (evt) => {
+        if (isOver) {
+          isOver = false
+          pic.setAttribute('src', src)
+        }
+      })
+    }
+  }
+})()
+</script>

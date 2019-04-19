@@ -57,9 +57,23 @@
 .intro__download {
   grid-area: download;
   margin-top: 30px;
-  display: flex;
+
   > a:not(:last-of-type) {
     margin-right: 12px;
+  }
+}
+
+.intro__download__free {
+  margin-top: 20px;
+  font-weight: 500;
+
+  b {
+    background: #ff866b;
+    border-radius: 5px;
+    color: #8f4839;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px 10px;
   }
 }
 
@@ -84,18 +98,19 @@
 .intro__video .button__play {
   --height: 60px;
   --pulse-color: 156, 100, 255;
-  height: var(--height);
-  position: absolute;
-  top: calc(50% - 20px);
-  left: calc(50% - 90px);
+  animation-duration: 2.75s;
+  animation-iteration-count: infinite;
+  animation-name: pulse;
   background-color: var(--primary-violet);
   border-color: var(--primary-violet);
   border-radius: calc(var(--height) / 2);
-  animation-name: pulse;
-  animation-duration: 2.75s;
-  animation-iteration-count: infinite;
-  svg,
-  b {
+  height: var(--height);
+  left: calc(50% - 90px);
+  position: absolute;
+  top: calc(50% - 20px);
+
+  b,
+  svg {
     pointer-events: none;
   }
 }
@@ -104,24 +119,24 @@
   color: #ebebeb;
   font-size: 18px;
   grid-area: note;
-  margin-top: 20px;
   line-height: 1.5;
+  margin-top: 20px;
+
   b {
-    font-weight: 700;
+    font-weight: 600;
   }
 }
 
 .scroll__down {
   --color: #ebebeb;
-  position: relative;
+  align-items: center;
   bottom: 100px;
+  color: var(--color);
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-size: 14px;
-  color: var(--color);
   opacity: 0.5;
-  cursor: pointer;
   position: absolute;
   transition: 0.3s ease;
 
@@ -132,10 +147,10 @@
 }
 
 .scroll__down svg {
-  width: 57px;
   height: 25px;
   margin-bottom: 20px;
   pointer-events: none;
+  width: 57px;
 }
 
 .scroll__down svg path {
@@ -160,9 +175,9 @@
 
   .intro__grid {
     display: grid;
+    grid-auto-rows: min-content;
     grid-template-areas: "video" "text" "integrations" "download" "note";
     grid-template-columns: auto;
-    grid-auto-rows: min-content;
   }
 
   .intro__text {
@@ -171,18 +186,18 @@
   }
 
   .intro__integrations {
-    margin-top: 32px;
     flex-wrap: wrap;
-    justify-content: center;
     font-size: 16px;
+    justify-content: center;
     line-height: 2;
+    margin-top: 32px;
   }
 
   .intro__download {
     a {
-      width: 100%;
-      padding: 16px 24px;
       font-size: 14px;
+      padding: 16px 24px;
+      width: 100%;
     }
   }
 

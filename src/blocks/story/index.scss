@@ -52,7 +52,8 @@
 .story__inner__text {
   color: var(--lighter-grey);
   grid-area: text;
-  line-height: 2;
+  line-height: 1.6;
+  max-width: 500px;
 }
 
 .story__inner__controls {
