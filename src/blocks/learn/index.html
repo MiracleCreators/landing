@@ -8,36 +8,36 @@
   <div class="container container--medium">
     <div class="learn__block">
       <div class="learn__menu">
-        <a id="learn__video__mobile-link" href="#">
+        <a id="learn__video__mobile-link" href="#!">
           Setup Workspace
         </a>
         <nav class="learn__nav">
-          <a href="#" class="active"><b>Getting started</b></a>
-            <a href="#" class="sub-item">Setup workspace</a>
-            <a href="#" class="sub-item">Quick walkthrough</a>
-          <a href="#"><b>Tabs</b></a>
-            <a href="#"class="sub-item">Chains. Breakdown</a>
-            <a href="#"class="sub-item">Scripts. Breakdown</a>
-            <a href="#"class="sub-item">Autoruns. Breakdown</a>
-          <a href="#"><b>Animation</b></a>
-            <a href="#" class="sub-item">Single Source</a>
-            <a href="#" class="sub-item">Stack of sources</a>
-          <a href="#"><b>Counters</b></a>
-            <a href="#" class="sub-item">Counters Basics</a>
-          <a href="#"><b>Variables</b></a>
-            <a href="#" class="sub-item">Variables Basics</a>
-          <!-- <a href="#" class="active"><b>Setup Workspace</b></a>
-          <a href="#">Getting started with <b>Chains</b></a>
-          <a href="#">Getting started with <b>Scripts</b></a>
-          <a href="#">Getting started with <b>Autoruns</b></a> -->
-          <!-- <a href="#">Getting started with <b>Chat</b></a> -->
-          <!-- <a href="#"><b>Animations Basics</b></a> -->
-          <!-- <a href="#"><b>Variables Basics</b></a> -->
+          <a href="#!" class="root-item active"><b>Getting Started</b></a>
+            <a href="#!" class="sub-item active">Setup Workspace</a>
+            <a href="#!" class="sub-item">Quick Walkthrough</a>
+          <a href="#!" class="root-item"><b>Tabs</b></a>
+            <a href="#!"class="sub-item">Chains. Breakdown</a>
+            <a href="#!"class="sub-item">Scripts. Breakdown</a>
+            <a href="#!"class="sub-item">Autoruns. Breakdown</a>
+          <a href="#!" class="root-item"><b>Animation</b></a>
+            <a href="#!" class="sub-item">Single Source</a>
+            <a href="#!" class="sub-item">Stack of Sources</a>
+          <a href="#!" class="root-item"><b>Counters</b></a>
+            <a href="#!" class="sub-item">Counters Basics</a>
+          <a href="#!" class="root-item"><b>Variables</b></a>
+            <a href="#!" class="sub-item">Variables Basics</a>
+          <!-- <a href="#!" class="active"><b>Setup Workspace</b></a>
+          <a href="#!">Getting started with <b>Chains</b></a>
+          <a href="#!">Getting started with <b>Scripts</b></a>
+          <a href="#!">Getting started with <b>Autoruns</b></a> -->
+          <!-- <a href="#!">Getting started with <b>Chat</b></a> -->
+          <!-- <a href="#!"><b>Animations Basics</b></a> -->
+          <!-- <a href="#!"><b>Variables Basics</b></a> -->
         </nav>
       </div>
       <div class="learn__video">
         <div class="learn__video__inner">
-          <h3 id="video-title">Getting started</h3>
+          <h3 id="videoTitle">Setup Workspace</h3>
           <div class="learn__video__inner__container">
             <iframe
               class="learn__video__inner__iframe"
@@ -47,7 +47,7 @@
               allowfullscreen>
             </iframe>
           </div>
-          <p id="video-description">Chains in FrameNinja let you connect numerous actions with each other, ranging from OBS, such as source control, down to Twitch chat features, like sending messages to the chat, to improve your interactive livestreaming experience.</p>
+          <p id="videoDescription">FrameNinja is essentially the only place where you can create custom interactive items for your stream in a matter of seconds. So you can quickly start interacting with the app, we have prepared a quick walkthrough in which we will tell you about the main tabs and functions of our tools.</p>
         </div>
       </div>
     </div>
@@ -57,11 +57,23 @@
 
 <script>
 (() => {
-  const links = Array.prototype.slice.call(document.querySelectorAll('.learn__nav > a'));
+  const links = Array.prototype.slice.call(document.querySelectorAll('.learn__nav > a.sub-item'));
+  const titles =  Array.prototype.slice.call(document.querySelectorAll('.learn__nav > a.root-item'));
   const video = document.querySelector('.learn__video__inner__iframe');
-  const videos = ['h_VbH443y9M', '3JGk3jc1hVw', 'H8Ar4aBLft0', '4OZMEDWknXU', /*'---', */'HJXNYNWwj6I', /*'AtOCy9Ynd0E' */];
-  const videoTitle = document.getElementById('video-title');
-  const videoDescription = document.getElementById('video-description');
+  const videos = ['h_VbH443y9M', 'TbUgYKJKcbQ', 'gLg3IVqNniw', 'BQJjvevDavM', '7APQdzab01Y', 'ZyUPKTY0oXo', 'z8hLNDapuy0', 'oDrWhBcO0js', 'iJtWb6gt9PM'];
+  const descriptions = [
+    '',
+    'FrameNinja is essentially the only place where you can create custom interactive items for your stream in a matter of seconds. So you can quickly start interacting with the app, we have prepared a quick walkthrough in which we will tell you about the main tabs and functions of our tools.',
+    'Chains in FrameNinja let you connect numerous actions with each other, ranging from OBS, such as source control, down to Twitch chat features, like sending messages to the chat, to improve your interactive livestreaming experience.',
+    'Referring to our previous video, you learned that with chains you can create a sequence of actions and run them in one click. But what if you want them to run automatically when something happens? So now you can use our next tab which is called "Scripts." Here you can choose one of many triggers that will run your commands and additional conditions, like specific Twitch viewer.',
+    'If you want your chains to start automatically at intervals, you need to use our next tab which is called "Autoruns." Here you can choose the interval at which your commands will be run.',
+    'FrameNinja lets you animate any sources in your OBS Studio. So first, select one of the available animation commands. There are three options to choose from, using what you can easily control properties such as position or size.',
+    'Using FrameNinja you can animate the stack of sources in your OBS. In this example, we want to animate several sources from which the whole composition is created. We can create a separate command for each source, or we can use another cool feature of our editor, namely the ability to move or resize sources by a certain pixel value to the left, up, down and right, or change its width and height.',
+    'Using FrameNinja, you can create, modify and manage counters in different ways.',
+    'Variables in FrameNinja allow you to store data so you can use it or change it elsewhere. To make it clearer, imagine that a variable is a "placeholder" that you use as a container for certain data, for example, the name of the game you are playing right now. So, instead of the full name of the game, you just need to use your variable.'
+  ]
+  const videoTitle = document.getElementById('videoTitle');
+  const videoDescription = document.getElementById('videoDescription');
 
   // console.log(videoTitle, videoDescription);
 
@@ -72,13 +84,21 @@
   links.forEach((link, idx) => {
     link.onclick = evt => {
       evt.preventDefault();
-      console.log(evt, evt.target);
       videoTitle.innerText = evt.target.innerText;
+      videoDescription.innerText = descriptions[idx]
       video.setAttribute('src', `https://www.youtube.com/embed/${videos[idx]}?rel=0`)
       links.forEach(link => {
         link.classList.remove('active')
       })
+      titles.forEach((title) => {
+        title.classList.remove('active')
+      })
       link.classList.add('active')
+      let sibling = link.previousElementSibling
+      while (!sibling.classList.contains('root-item')) {
+        sibling = sibling.previousElementSibling
+      }
+      sibling.classList.add('active')
       if(window.innerWidth <= 768){
         mobileMenu.classList.toggle('active')
         mobileLinkSelector.innerText = evt.target.innerText
