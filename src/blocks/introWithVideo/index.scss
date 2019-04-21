@@ -1,10 +1,9 @@
 .intro {
   align-items: center;
-  background: var(--darker-violet);
+  background: var(--darker-violet) url("/img/intro_bg.jpg");
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 50px;
 }
 
 .intro__grid {
