@@ -1,0 +1,15 @@
+.err404 {
+  align-items: center;
+  background: var(--darker-violet) url("/img/intro_bg.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.err404__title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
