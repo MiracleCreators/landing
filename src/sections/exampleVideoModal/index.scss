@@ -36,7 +36,7 @@
   display: grid;
   grid-gap: 20px;
   grid-template-areas: "video right";
-  grid-template-columns: auto minmax(400px, 1fr);
+  grid-template-columns: 1fr 413px;
   height: auto;
   margin: auto;
   max-width: 90%;
@@ -78,9 +78,12 @@
 }
 
 .gallery__modal__content {
-  img {
-    width: 100%;
-    height: auto;
+  padding-top: 56.25%;
+  position: relative;
+
+  video {
+    position: absolute;
+    top: 0;
   }
 }
 

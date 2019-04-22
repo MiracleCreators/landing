@@ -1,0 +1,10 @@
+.playOn {
+  position: relative;
+}
+
+.playOn__icon {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(calc(-50% - 0.5px)) translateY(calc(-50% - 0.5px));
+}

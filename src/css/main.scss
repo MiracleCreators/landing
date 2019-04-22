@@ -62,13 +62,14 @@ html:not(.with-focus) a:focus {
   outline: none;
 }
 
-@import "./common/colors";
 @import "./common/block";
-@import "./common/fullPage";
-@import "./common/container";
 @import "./common/button";
+@import "./common/colors";
+@import "./common/container";
+@import "./common/fullPage";
+@import "./common/playOn";
+@import "./common/pulse";
 @import "./common/social";
 @import "./common/well";
-@import "./common/pulse";
 
 @import "./sections";

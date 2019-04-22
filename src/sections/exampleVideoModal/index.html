@@ -17,7 +17,12 @@
       <div class="gallery__modal__guide">
         <div class="gallery__modal__line"></div>
         <h3 class="gallery__modal__title">Tutorial:</h3>
-        <div class="gallery__modal__description">Test</div>
+        <div class="gallery__modal__description">
+          <a href="#!" target="_blank" class="playOn">
+            <img src="/img/play_on_youtube.png" class="playOn__icon" />
+            <img src="#" class="playOn__picture" />
+          </a>
+        </div>
       </div>
       <div class="gallery__modal__line"></div>
       <div class="gallery__modal__discord">
@@ -39,6 +44,8 @@
   const description = modal.querySelector('.gallery__modal__description')
   const closers = document.querySelectorAll('#galleryModal, #galleryModal, [data-role="close"]')
   const guideSection = modal.querySelector('.gallery__modal__guide')
+  const guideLink = guideSection.querySelector('a')
+  const guidePicture = guideSection.querySelector('.playOn__picture')
   const copyLink= modal.querySelector('#galleryModalCopy')
   const galleryModalLink = modal.querySelector('#galleryModalLink')
   let shouldOpen = true, closeTimeout, currentLink, shareLink
@@ -78,11 +85,14 @@
       const targetUrl = event.currentTarget.dataset.example
       const targetTitle = event.currentTarget.dataset.title
       const targetDescription = event.currentTarget.dataset.description
+      const id = targetUrl.split('/').slice(-1)[0].slice(0, -4)
 
       currentLink = targetUrl
-      shareLink = `https://frame.ninja/examples#${targetUrl.split('/').slice(-1)[0].slice(0, -4)}`
+      shareLink = `https://frame.ninja/examples#${id}`
       if (guideUrl) {
         guideSection.style.display = 'initial'
+        guideLink.setAttribute('href', guideUrl)
+        guidePicture.setAttribute('src', `/img/gallery/guides/${id}.png`)
       } else {
         guideSection.style.display = 'none'
       }
@@ -90,16 +100,15 @@
 
       if (targetUrl === source.getAttribute('src')) {
         video.currentTime = 0
-        openModal()
-        return 
       } else {
         source.setAttribute('src', targetUrl)
         title.innerHTML = targetTitle
         description.innerHTML = targetDescription
         video.currentTime = 0
-        video.addEventListener('canplay', handleLoad)
+        // video.addEventListener('canplay', handleLoad)
         video.load();
       }
+      openModal()
     })
   })
 
