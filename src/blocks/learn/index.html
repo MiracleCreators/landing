@@ -12,20 +12,20 @@
           Setup Workspace
         </a>
         <nav class="learn__nav">
-          <a href="#!" class="root-item active"><b>Getting Started</b></a>
-            <a href="#!" class="sub-item active">Setup Workspace</a>
-            <a href="#!" class="sub-item">Quick Walkthrough</a>
-          <a href="#!" class="root-item"><b>Tabs</b></a>
-            <a href="#!"class="sub-item">Chains. Breakdown</a>
-            <a href="#!"class="sub-item">Scripts. Breakdown</a>
-            <a href="#!"class="sub-item">Autoruns. Breakdown</a>
-          <a href="#!" class="root-item"><b>Animation</b></a>
-            <a href="#!" class="sub-item">Single Source</a>
-            <a href="#!" class="sub-item">Stack of Sources</a>
-          <a href="#!" class="root-item"><b>Counters</b></a>
-            <a href="#!" class="sub-item">Counters Basics</a>
-          <a href="#!" class="root-item"><b>Variables</b></a>
-            <a href="#!" class="sub-item">Variables Basics</a>
+          <a href="#getting_started" class="root-item active"><b>Getting Started</b></a>
+            <a href="#setup_workspace" class="sub-item active">Setup Workspace</a>
+            <a href="#quick_walkthrough" class="sub-item">Quick Walkthrough</a>
+          <a href="#tabs" class="root-item"><b>Tabs</b></a>
+            <a href="#chains"class="sub-item">Chains. Breakdown</a>
+            <a href="#scripts"class="sub-item">Scripts. Breakdown</a>
+            <a href="#autoruns"class="sub-item">Autoruns. Breakdown</a>
+          <a href="#animation" class="root-item"><b>Animation</b></a>
+            <a href="#animation_single_source" class="sub-item">Single Source</a>
+            <a href="#animation_many_sources" class="sub-item">Stack of Sources</a>
+          <a href="#counters" class="root-item"><b>Counters</b></a>
+            <a href="#counters_basics" class="sub-item">Counters Basics</a>
+          <a href="#variables" class="root-item"><b>Variables</b></a>
+            <a href="#variables_basics" class="sub-item">Variables Basics</a>
           <!-- <a href="#!" class="active"><b>Setup Workspace</b></a>
           <a href="#!">Getting started with <b>Chains</b></a>
           <a href="#!">Getting started with <b>Scripts</b></a>
@@ -47,7 +47,7 @@
               allowfullscreen>
             </iframe>
           </div>
-          <p id="videoDescription">FrameNinja is essentially the only place where you can create custom interactive items for your stream in a matter of seconds. So you can quickly start interacting with the app, we have prepared a quick walkthrough in which we will tell you about the main tabs and functions of our tools.</p>
+          <p id="videoDescription"></p>
         </div>
       </div>
     </div>
@@ -83,7 +83,6 @@
   
   links.forEach((link, idx) => {
     link.onclick = evt => {
-      evt.preventDefault();
       videoTitle.innerText = evt.target.innerText;
       videoDescription.innerText = descriptions[idx]
       video.setAttribute('src', `https://www.youtube.com/embed/${videos[idx]}?rel=0`)
@@ -112,12 +111,25 @@
     }
   })
 
+  titles.forEach(title => {
+    title.onclick = evt => {
+
+      evt.currentTarget.nextElementSibling.click()
+    }
+  })
+
   mobileLinkSelector.addEventListener('click', evt => {
     evt.preventDefault()
 
     mobileMenu.classList.toggle('active')
 
   })
+
+  for (const id in links) {
+    if (location.href.startsWith(links[id].href)) {
+      links[id].click()
+    }
+  }
 
 })()
 </script>
