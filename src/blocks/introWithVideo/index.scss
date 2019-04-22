@@ -1,6 +1,8 @@
 .intro {
   align-items: center;
   background: var(--darker-violet) url("/img/intro_bg.jpg");
+  background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
