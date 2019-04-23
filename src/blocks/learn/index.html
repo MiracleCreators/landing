@@ -131,5 +131,11 @@
     }
   }
 
+  for (const id in titles) {
+    if (location.href.startsWith(titles[id].href)) {
+      titles[id].click()
+    }
+  }
+
 })()
 </script>
