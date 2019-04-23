@@ -1,8 +1,20 @@
 .playOn {
+  display: block;
+  overflow: hidden;
+  padding-top: 56.25%;
   position: relative;
+  width: 100%;
 }
 
 .playOn__icon {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateX(calc(-50% - 0.5px)) translateY(calc(-50% - 0.5px));
+  z-index: 2;
+}
+
+.playOn__picture {
   left: 50%;
   position: absolute;
   top: 50%;
