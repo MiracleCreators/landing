@@ -36,7 +36,7 @@
   display: grid;
   grid-gap: 20px;
   grid-template-areas: "video right";
-  grid-template-columns: 1fr 413px;
+  grid-template-columns: 1fr 370px;
   height: auto;
   margin: auto;
   max-width: 90%;
@@ -136,6 +136,11 @@
       width: auto;
     }
   }
+}
+
+#galleryModalLink {
+  position: absolute;
+  visibility: hidden;
 }
 
 @media (max-width: 768px) {
