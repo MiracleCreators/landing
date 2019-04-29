@@ -16,6 +16,26 @@
   border-radius: 5px;
   cursor: pointer;
   padding: 10px 10px 15px;
+  position: relative;
+
+  &--hot {
+    background: #4f3002;
+    box-shadow: inset 0 0 0 1px var(--primary-orange);
+    color: var(--primary-orange);
+  }
+}
+
+.gallery__item__hotBadge {
+  background: #845000;
+  border: 1px solid #ff9900;
+  border-radius: 4px;
+  padding: 10px;
+  font-weight: 600;
+  left: 50%;
+  position: absolute;
+  top: -10px;
+  transform: translateX(-50%);
+  z-index: 3;
 }
 
 .gallery__item__picture {
@@ -32,6 +52,10 @@
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
     width: 100%;
+  }
+
+  .gallery__item--hot & {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 }
 
