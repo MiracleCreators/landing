@@ -64,6 +64,7 @@
   }
 
   const closeModal = () => {
+    location.hash = ''
     shouldOpen = true
     modal.classList.remove('animated')
     video.pause()
