@@ -6,7 +6,7 @@
       </a>
     </div>
     <div class="gallery__modal__content">
-      <video autoplay loop preload="metadata" volume="0.3">
+      <video loop preload="metadata" volume="0.1">
         <source src="#" type="video/mp4" />
         Your browser does not support the HTML5 video tag.
       </video>
@@ -44,6 +44,7 @@
   const description = modal.querySelector('.gallery__modal__description')
   const closers = document.querySelectorAll('#galleryModal, #galleryModal, [data-role="close"]')
   const guideSection = modal.querySelector('.gallery__modal__guide')
+  const guideTitle = guideSection.querySelector('h3')
   const guideLink = guideSection.querySelector('a')
   const guidePicture = guideSection.querySelector('.playOn__picture')
   const copyLink= modal.querySelector('#galleryModalCopy')
@@ -86,8 +87,22 @@
       const guideUrl = event.currentTarget.dataset.guide
       const targetUrl = event.currentTarget.dataset.example
       const targetTitle = event.currentTarget.dataset.title
+      const targetGuideTitle = event.currentTarget.dataset.guideTitle
       const targetDescription = event.currentTarget.dataset.description
+      const hasControls = 'controls' in event.currentTarget.dataset
       const id = targetUrl.split('/').slice(-1)[0].slice(0, -4)
+
+      if (hasControls) {
+        video.autoplay = false
+        video.controls = true
+        setTimeout(() => {
+          // video.play()
+          // video.pause()
+        }, 0)
+      } else {
+        video.autoplay = true
+        video.controls = false
+      }
 
       currentLink = targetUrl
       shareLink = `https://frame.ninja/examples#${id}`
@@ -99,9 +114,11 @@
         guideSection.style.display = 'none'
       }
       location.hash = shareLink.split('#')[1]
+      guideTitle.innerHTML = targetGuideTitle || 'Tutorial:'
 
       if (targetUrl === source.getAttribute('src')) {
         video.currentTime = 0
+        video.play()
       } else {
         source.setAttribute('src', targetUrl)
         title.innerHTML = targetTitle
@@ -110,7 +127,6 @@
         // video.addEventListener('canplay', handleLoad)
         video.load();
       }
-      video.play()
       openModal()
     })
   })
