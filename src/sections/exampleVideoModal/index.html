@@ -92,18 +92,6 @@
       const hasControls = 'controls' in event.currentTarget.dataset
       const id = targetUrl.split('/').slice(-1)[0].slice(0, -4)
 
-      if (hasControls) {
-        video.autoplay = false
-        video.controls = true
-        setTimeout(() => {
-          // video.play()
-          // video.pause()
-        }, 0)
-      } else {
-        video.autoplay = true
-        video.controls = false
-      }
-
       currentLink = targetUrl
       shareLink = `https://frame.ninja/examples#${id}`
       if (guideUrl) {
@@ -118,7 +106,9 @@
 
       if (targetUrl === source.getAttribute('src')) {
         video.currentTime = 0
-        video.play()
+        if (video.autoplay) {
+          video.play()
+        }
       } else {
         source.setAttribute('src', targetUrl)
         title.innerHTML = targetTitle
@@ -127,6 +117,22 @@
         // video.addEventListener('canplay', handleLoad)
         video.load();
       }
+
+      if (hasControls) {
+        video.autoplay = false
+        video.controls = true
+      } else {
+        video.autoplay = true
+        video.controls = false
+      }
+
+      setTimeout(() => {
+        if (video.controls) {
+          video.play()
+          video.pause()
+        }
+      }, 100)
+
       openModal()
     })
   })
